@@ -4,5 +4,6 @@ app= QApplication(sys.argv)
 
 window = QWidget()
 
+
 window.show()
 sys.exit(app.exec())
