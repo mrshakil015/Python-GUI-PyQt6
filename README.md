@@ -17,3 +17,12 @@ There are three different window type classes in PyQt6
 * self.setFixedWidth(700) - using for set the fixed width
 * self.setStyleSheet('background-color: red') - using for set the background color
 * self.setWindowOpacity(0.5) - using for set window opacity
+
+**Open QT Digner:**
+
+* At First install- pip install pyqt6-tools
+* Then -->env-->Lib-->qt6 application-->Qt-->bin-->designer.exe
+
+**Convert QT Digner UI file to py file:**
+
+* Type text in terminal: pyuic6 -x UIfilepath -o newfilename.py
