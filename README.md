@@ -1,6 +1,7 @@
 # Python-GUI-PyQt6
 
-## Window Class Types
+<details>
+  <summary>Window Class Types</summary>
 
 There are three different window type classes in PyQt6
 
@@ -21,8 +22,25 @@ There are three different window type classes in PyQt6
 **Open QT Digner:**
 
 * At First install- pip install pyqt6-tools
-* Then -->env-->Lib-->qt6 application-->Qt-->bin-->designer.exe
-
+   ```python
+  Then -->env-->Lib-->qt6 application-->Qt-->bin-->designer.exe
+  ```
 **Convert QT Digner UI file to py file:**
 
-* Type text in terminal: pyuic6 -x UIfilepath -o newfilename.py
+* Type text in terminal:
+  ```python
+  pyuic6 -x UIfilepath -o newfilename.py
+  ```
+</details>
+
+<details>
+  <summary>PyQt6 QLabel</summary>
+QLabel is a widget that is used to display text or images. It is essentially a widget for showing a static text or an image on the user interface.
+
+
+  + **Displaying Text:** QLabel is commonly used to show text on the GUI. It can display plain text, HTML-formatted text, or even rich text with formatting like fonts, colors, etc. This makes it useful for displaying instructions, labels, or any kind of textual information on the interface.
+  + **Displaying Images:** QLabel can also be used to display images such as icons, logos, or pictures. It supports various image formats, and you can easily load and display images using this widget.
+  + **Interaction:** Though QLabel is primarily used for displaying static content, it can be used to display clickable text or images as well. You can set up event handlers to respond to mouse clicks or other interactions on the QLabel.
+  + **Alignment and Layout:** QLabel allows you to align the text or image within the widget, which is important for creating visually appealing interfaces. You can control the alignment horizontally and vertically, ensuring proper layout and presentation.
+  + **Accessibility:** QLabel is useful for creating accessible interfaces since it can display text that can be read by screen readers, making your application more inclusive.
+</details>
