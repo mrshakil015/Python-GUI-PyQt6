@@ -1,7 +1,8 @@
 # Python-GUI-PyQt6
 
 <details>
-  <summary>Get Started with PyQt6</summary>
+  <summary>Get Started with PyQt6 & Create Environment</summary>
+PyQt is a set of Python bindings for building cross-platform applications, PyQt combines all the advantages of Qt and Python. With PyQt, you can include Qt libraries in python code, enabling you to write GUI applications in Python. In other words, we can say that PyQt allows you to access all the facilities provided by Qt through Python code. 
   
 </br><b>Install Virtual Environment:</b>
   - virtualenv is considered as the virtual python environment builder which is used to create the multiple python virtual environment side by side. 
