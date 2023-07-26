@@ -1,6 +1,50 @@
 # Python-GUI-PyQt6
 
 <details>
+  <summary>Get Started with PyQt6</summary>
+  
+</br><b>Install Virtual Environment:</b>
+  - virtualenv is considered as the virtual python environment builder which is used to create the multiple python virtual environment side by side. 
+  - At first open <code>Visual Studio Code</code> then use following command to install virtual environment:
+  ```python
+pip install virtualenv
+```
+  - Once it is installed, we can create the new virtual environment into a folder as given below.
+   ```python
+python -m venv env
+```
+  - To activate the corresponding environment, use the following command on the Windows operating system.
+  ```python
+.\env\Scripts\activate
+```
+  - Then install the PyQt6 by using the following command:
+  ```python
+pip install pyqt6
+pip install pyqt6-tools
+```
+  - Now Create your first Python file. In the below code used for the custom window:
+  ```python
+from PyQt6.QtWidgets import QApplication, QWidget
+from PyQt6.QtGui import QIcon
+import sys
+
+
+class Window(QWidget):
+    def __init__(self):
+        super().__init__()
+        
+        self.setGeometry(200,200, 700,400)
+        self.setWindowTitle("Python GUI Development")
+        self.setWindowIcon(QIcon('images/python.png'))
+
+app = QApplication(sys.argv)
+Window = Window()
+Window.show()
+sys.exit(app.exec())
+```
+</details>
+
+<details>
   <summary>Window Class Types</summary>
 
 There are three different window type classes in PyQt6
@@ -43,4 +87,23 @@ QLabel is a widget that is used to display text or images. It is essentially a w
   + **Interaction:** Though QLabel is primarily used for displaying static content, it can be used to display clickable text or images as well. You can set up event handlers to respond to mouse clicks or other interactions on the QLabel.
   + **Alignment and Layout:** QLabel allows you to align the text or image within the widget, which is important for creating visually appealing interfaces. You can control the alignment horizontally and vertically, ensuring proper layout and presentation.
   + **Accessibility:** QLabel is useful for creating accessible interfaces since it can display text that can be read by screen readers, making your application more inclusive.
+</details>
+
+<details>
+  <summary>PyQt6 QPushButton</summary>
+  The push button, or command button, is perhaps the most commonly used widget in any graphical user interface. Push (click) a button to command the computer to perform some action, or to answer a question. Typical buttons are OK, Apply, Cancel, Close, Yes, No and Help.
+  
+  <br>**Specific Libraries:-**
+  ```python
+  from PyQt6.QtWidgets import QPushButton
+  from PyQt6.QtGui import QFont, QIcon
+  from PyQt6.QtCore import QSize 
+  ```
+
+**There are different methods that we can use in QPushButton.**
++ setText(): This method is used to assign text to the push button
++ setIcon(): This method is used to assign an icon to the push button
++ setGeometry(): This method is used for setting the x and y position, also width and height of the button.
++ setMenu(): This method is used for setting pop menu to the button.
+ 
 </details>
