@@ -150,7 +150,7 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label.setText(_translate("Form", "First Number:"))
+        self.label.setText(_translate("Form", "First Number:    "))
         self.lineEdit_1st.setPlaceholderText(_translate("Form", "Enter First Number"))
         self.label_2.setText(_translate("Form", "Second Number:"))
         self.lineEdit_2nd.setPlaceholderText(_translate("Form", "Enter Second Number"))
