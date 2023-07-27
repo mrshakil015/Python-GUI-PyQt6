@@ -1,0 +1,30 @@
+<RCC>
+  <qresource prefix="images">
+    <file>about.png</file>
+    <file>aboutqt.png</file>
+    <file>align-left.png</file>
+    <file>align-right.png</file>
+    <file>bold.png</file>
+    <file>center.png</file>
+    <file>center-align.png</file>
+    <file>color.png</file>
+    <file>copy.png</file>
+    <file>cut.png</file>
+    <file>exit.png</file>
+    <file>font.png</file>
+    <file>italic.png</file>
+    <file>justify.png</file>
+    <file>left.png</file>
+    <file>new.png</file>
+    <file>open.png</file>
+    <file>paste.png</file>
+    <file>pdf.png</file>
+    <file>print.png</file>
+    <file>printprev.png</file>
+    <file>redo.png</file>
+    <file>right.png</file>
+    <file>save.png</file>
+    <file>underline.png</file>
+    <file>undo.png</file>
+  </qresource>
+</RCC>

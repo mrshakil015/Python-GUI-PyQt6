@@ -108,7 +108,7 @@ class Ui_Dialog(object):
         if self.cash_radio.isChecked() == True:
             payment_selected = "Cash"
 
-        self.label_result.setText("Chosen Book: " +book_selected+", Choosen Payment Method- " +payment_selected)
+        self.label_result.setText("Chosen Book- " +book_selected+", Choosen Payment Method- " +payment_selected)
         
 
     def retranslateUi(self, Dialog):
