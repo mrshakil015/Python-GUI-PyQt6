@@ -13,7 +13,6 @@ class Window(QWidget):
 
         self.create_widget()
 
-
     def create_widget(self):
         hbox = QHBoxLayout()
         btn = QPushButton("Change Text")
