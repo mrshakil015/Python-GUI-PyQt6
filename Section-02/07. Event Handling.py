@@ -1,5 +1,5 @@
 from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QHBoxLayout
-from PyQt6.QtGui import QIcon
+from PyQt6.QtGui import QIcon, QFont
 import sys
 
 
@@ -17,12 +17,17 @@ class Window(QWidget):
     def create_widget(self):
         hbox = QHBoxLayout()
         btn = QPushButton("Change Text")
+        btn.clicked.connect(self.clicked_btn)
         self.label = QLabel("Defalut Text")
 
         hbox.addWidget(btn)
         hbox.addWidget(self.label)
 
         self.setLayout(hbox)
+    
+    def clicked_btn(self):
+        self.label.setText("Another Text")
+        self.label.setStyleSheet('color: red')
 
 
 app = QApplication(sys.argv)
