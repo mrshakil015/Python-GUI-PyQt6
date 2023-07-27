@@ -44,6 +44,14 @@ Window.show()
 sys.exit(app.exec())
 ```
 </details>
+<details>
+  <summary>Convert QT Digner UI file to py file</summary>
+
+* Type text in terminal:
+  ```python
+  pyuic6 -x UIfilepath -o newfilename.py
+  ```
+</details>
 
 <details>
   <summary>Window Class Types</summary>
