@@ -38,11 +38,6 @@ class Window(QWidget):
 
 
 
-
-
-
-
-
 app = QApplication(sys.argv)
 Window = Window()
 Window.show()
