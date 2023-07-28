@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'InsertingDataDatabaes.ui'
+# Form implementation generated from reading ui file 'c:\Users\MD. SHAMIM\Documents\GitHub\Python-GUI-PyQt6\Section-04\InsertingDataDatabaes.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -7,7 +7,6 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-import mysql.connector as mc
 
 
 class Ui_Form(object):
@@ -60,8 +59,6 @@ class Ui_Form(object):
         font.setBold(True)
         self.pushButton_insert.setFont(font)
         self.pushButton_insert.setObjectName("pushButton_insert")
-
-        self.pushButton_insert.clicked.connect(self.insert_data)
         self.verticalLayout.addWidget(self.pushButton_insert)
         self.label_result = QtWidgets.QLabel(parent=Form)
         font = QtGui.QFont()
@@ -74,31 +71,6 @@ class Ui_Form(object):
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
-    def insert_data(self):
-        try:
-            mydb = mc.connect(
-                host="localhost",
-                user="root",
-                password="",
-                database="pyqtdb"
-            )
-
-            mycursor = mydb.cursor()
-            username = self.lineEdit_username.text()
-            password = self.lineEdit_password.text()
-
-            query = "INSERT INTO pyqtusers (username, password) VALUES (%s, %s)"
-            value = (username, password)
-
-            mycursor.execute(query, value)
-
-            mydb.commit()
-            self.label_result.setText("Data Inserted")
-
-        except mc.Error as e:
-            self.label_result.setText("Error Inserting Data.")
-
-
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
@@ -106,13 +78,3 @@ class Ui_Form(object):
         self.label.setText(_translate("Form", "Username:"))
         self.label_2.setText(_translate("Form", "Password: "))
         self.pushButton_insert.setText(_translate("Form", "Insert Data"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
-    ui = Ui_Form()
-    ui.setupUi(Form)
-    Form.show()
-    sys.exit(app.exec())

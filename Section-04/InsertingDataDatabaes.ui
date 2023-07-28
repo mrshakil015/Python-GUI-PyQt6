@@ -63,6 +63,19 @@
     </layout>
    </item>
    <item>
+    <spacer name="verticalSpacer_3">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QLabel" name="label_2">
@@ -72,7 +85,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Password:</string>
+        <string>Password: </string>
        </property>
        <property name="margin">
         <number>10</number>
@@ -80,7 +93,11 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_password"/>
+      <widget class="QLineEdit" name="lineEdit_password">
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
@@ -107,6 +124,18 @@
      </property>
      <property name="text">
       <string>Insert Data</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="label_result">
+     <property name="font">
+      <font>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
      </property>
     </widget>
    </item>
