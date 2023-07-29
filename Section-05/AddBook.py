@@ -58,6 +58,10 @@ class Add_Dialog(object):
         self.lineEdit_publisher.setObjectName("lineEdit_publisher")
         self.verticalLayout.addWidget(self.lineEdit_publisher)
         self.pushButton_addbook = QtWidgets.QPushButton(parent=Dialog)
+        
+         #connect signal
+        self.pushButton_addbook.clicked.connect(self.insert_book)
+        
         self.pushButton_addbook.setMaximumSize(QtCore.QSize(16777215, 40))
         font = QtGui.QFont()
         font.setPointSize(12)
@@ -88,14 +92,36 @@ class Add_Dialog(object):
                 host = "localhost",
                 user="root",
                 password="",
-                database="library_management"
+                database="library_managemenet"
             )
 
-            
+            title = self.lineEdit_title.text()
+            id = self.lineEdit_id.text()
+            author = self.lineEdit_author.text()
+            publisher = self.lineEdit_publisher.text()
 
+            if title =="" or id =="" or author == "" or publisher =="":
+                self.label_result.setText("Please Fill all fields")
+                self.label_result.setStyleSheet("color: red")
+                return
+            
+            mycursor = mydb.cursor()
+            query = "INSERT INTO addbook_table (title, id, author, publisher) VALUES (%s, %s, %s, %s)"
+            value = (title, id, author, publisher)
+            mycursor.execute(query,value)
+
+            mydb.commit()
+            self.label_result.setText("Data added successfully")
+            self.label_result.setStyleSheet("color: green")
+
+            self.lineEdit_title.setText("")
+            self.lineEdit_id.setText("")
+            self.lineEdit_author.setText("")
+            self.lineEdit_publisher.setText("")
+                
         except mc.Error as e:
             self.label_result.setText("Failed to add Book")
-            self.label_result.setStylesheet('color:red')
+            self.label_result.setStyleSheet("color: red")
 
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
@@ -106,4 +132,4 @@ class Add_Dialog(object):
         self.lineEdit_author.setPlaceholderText(_translate("Dialog", "Please Enter Author"))
         self.lineEdit_publisher.setPlaceholderText(_translate("Dialog", "Please Enter Publisher"))
         self.pushButton_addbook.setText(_translate("Dialog", "Add Book"))
-        self.label_result.setText(_translate("Dialog", "TextLabel"))
+        self.label_result.setText(_translate("Dialog", ""))
