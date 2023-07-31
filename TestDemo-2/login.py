@@ -12,15 +12,18 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(457, 361)
+        Form.resize(510, 450)
+        Form.setMinimumSize(QtCore.QSize(510, 450))
         Form.setStyleSheet("#Form{\n"
 "background-color:#0a676c\n"
 "}\n"
 "\n"
 "#loginwidget{\n"
 "background-color: #fff;\n"
-"border-radius: 10px\n"
+"border-radius: 10px;\n"
+"box-shadow: 5px 5px 10px black;\n"
 "}\n"
+"\n"
 "\n"
 "#logo_frame QPushButton{\n"
 "background-color: transparent;\n"
@@ -31,6 +34,32 @@ class Ui_Form(object):
 "border: none;\n"
 "color: #0a676c;\n"
 "}\n"
+"\n"
+"#username_frame QLineEdit, #password_frame QLineEdit {\n"
+"border: none;\n"
+"padding: 3px;\n"
+"border-bottom: 1px solid #74afad;\n"
+"}\n"
+"\n"
+"#login_btn_frame QPushButton {\n"
+"border: none;\n"
+"color: #fff;\n"
+"\n"
+"}\n"
+"\n"
+"#login_btn_frame {\n"
+"background-color: #0a676c;\n"
+"border-radius: 5px;\n"
+"}\n"
+"#login_btn_frame:hover {\n"
+"background-color:#22767a;\n"
+"}\n"
+"\n"
+"#message_frame QLabel {\n"
+"color: red;\n"
+"padding-left: 5px\n"
+"}\n"
+"\n"
 "")
         self.horizontalLayout = QtWidgets.QHBoxLayout(Form)
         self.horizontalLayout.setContentsMargins(7, -1, -1, -1)
@@ -42,8 +71,10 @@ class Ui_Form(object):
         sizePolicy.setHeightForWidth(self.loginwidget.sizePolicy().hasHeightForWidth())
         self.loginwidget.setSizePolicy(sizePolicy)
         self.loginwidget.setMaximumSize(QtCore.QSize(441, 343))
+        self.loginwidget.setStyleSheet("")
         self.loginwidget.setObjectName("loginwidget")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.loginwidget)
+        self.verticalLayout_2.setSpacing(0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.logo_frame = QtWidgets.QFrame(parent=self.loginwidget)
         self.logo_frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
@@ -64,7 +95,7 @@ class Ui_Form(object):
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("icons/logo.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.logo.setIcon(icon)
-        self.logo.setIconSize(QtCore.QSize(70, 35))
+        self.logo.setIconSize(QtCore.QSize(70, 30))
         self.logo.setObjectName("logo")
         self.horizontalLayout_7.addWidget(self.logo)
         self.verticalLayout_2.addWidget(self.logo_frame)
@@ -73,7 +104,8 @@ class Ui_Form(object):
         self.title_frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.title_frame.setObjectName("title_frame")
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.title_frame)
-        self.horizontalLayout_6.setContentsMargins(-1, 0, -1, -1)
+        self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout_6.setSpacing(0)
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
         self.pushButton = QtWidgets.QPushButton(parent=self.title_frame)
         self.pushButton.setEnabled(False)
@@ -91,8 +123,6 @@ class Ui_Form(object):
         self.loginframe_user.setObjectName("loginframe_user")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.loginframe_user)
         self.verticalLayout.setObjectName("verticalLayout")
-        spacerItem = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Preferred)
-        self.verticalLayout.addItem(spacerItem)
         self.username_frame = QtWidgets.QFrame(parent=self.loginframe_user)
         font = QtGui.QFont()
         font.setPointSize(10)
@@ -104,24 +134,46 @@ class Ui_Form(object):
         self.horizontalLayout_2.setContentsMargins(5, 5, 5, 5)
         self.horizontalLayout_2.setSpacing(6)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        self.label = QtWidgets.QLabel(parent=self.username_frame)
+        self.label.setMaximumSize(QtCore.QSize(20, 20))
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap("icons/user.svg"))
+        self.label.setScaledContents(True)
+        self.label.setObjectName("label")
+        self.horizontalLayout_2.addWidget(self.label)
         self.lineEdit_username = QtWidgets.QLineEdit(parent=self.username_frame)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.lineEdit_username.setFont(font)
         self.lineEdit_username.setObjectName("lineEdit_username")
         self.horizontalLayout_2.addWidget(self.lineEdit_username)
         self.verticalLayout.addWidget(self.username_frame)
-        spacerItem1 = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Preferred)
-        self.verticalLayout.addItem(spacerItem1)
+        spacerItem = QtWidgets.QSpacerItem(20, 5, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Preferred)
+        self.verticalLayout.addItem(spacerItem)
         self.password_frame = QtWidgets.QFrame(parent=self.loginframe_user)
         self.password_frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.password_frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.password_frame.setObjectName("password_frame")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.password_frame)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
+        self.label_2 = QtWidgets.QLabel(parent=self.password_frame)
+        self.label_2.setMinimumSize(QtCore.QSize(0, 0))
+        self.label_2.setMaximumSize(QtCore.QSize(20, 20))
+        self.label_2.setText("")
+        self.label_2.setPixmap(QtGui.QPixmap("icons/lock.svg"))
+        self.label_2.setScaledContents(True)
+        self.label_2.setObjectName("label_2")
+        self.horizontalLayout_3.addWidget(self.label_2)
         self.lineEdit_password = QtWidgets.QLineEdit(parent=self.password_frame)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.lineEdit_password.setFont(font)
+        self.lineEdit_password.setEchoMode(QtWidgets.QLineEdit.EchoMode.Password)
         self.lineEdit_password.setObjectName("lineEdit_password")
         self.horizontalLayout_3.addWidget(self.lineEdit_password)
         self.verticalLayout.addWidget(self.password_frame)
-        spacerItem2 = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Preferred)
-        self.verticalLayout.addItem(spacerItem2)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Preferred)
+        self.verticalLayout.addItem(spacerItem1)
         self.login_btn_frame = QtWidgets.QFrame(parent=self.loginframe_user)
         self.login_btn_frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.login_btn_frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
@@ -129,14 +181,17 @@ class Ui_Form(object):
         self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.login_btn_frame)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
         self.login_btn = QtWidgets.QPushButton(parent=self.login_btn_frame)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        self.login_btn.setFont(font)
+        self.login_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("icons/log-in (1).svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.login_btn.setIcon(icon1)
         self.login_btn.setObjectName("login_btn")
         self.horizontalLayout_4.addWidget(self.login_btn)
         self.verticalLayout.addWidget(self.login_btn_frame)
-        spacerItem3 = QtWidgets.QSpacerItem(20, 20, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Preferred)
-        self.verticalLayout.addItem(spacerItem3)
         self.verticalLayout_2.addWidget(self.loginframe_user)
         self.message_frame = QtWidgets.QFrame(parent=self.loginwidget)
         self.message_frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
@@ -145,6 +200,7 @@ class Ui_Form(object):
         self.horizontalLayout_5 = QtWidgets.QHBoxLayout(self.message_frame)
         self.horizontalLayout_5.setObjectName("horizontalLayout_5")
         self.label_message = QtWidgets.QLabel(parent=self.message_frame)
+        self.label_message.setText("")
         self.label_message.setObjectName("label_message")
         self.horizontalLayout_5.addWidget(self.label_message)
         self.verticalLayout_2.addWidget(self.message_frame)
@@ -160,7 +216,6 @@ class Ui_Form(object):
         self.lineEdit_username.setPlaceholderText(_translate("Form", "Enter Username"))
         self.lineEdit_password.setPlaceholderText(_translate("Form", "Enter Password"))
         self.login_btn.setText(_translate("Form", "LOG IN"))
-        self.label_message.setText(_translate("Form", "TextLabel"))
 
 
 if __name__ == "__main__":
