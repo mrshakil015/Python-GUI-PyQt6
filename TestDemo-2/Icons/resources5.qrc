@@ -1,18 +1,18 @@
 <RCC>
   <qresource prefix="icons">
     <file>main-logo.png</file>
-    <file>send-message (2).png</file>
-    <file>send (1).svg</file>
-    <file>send-message.png</file>
-    <file>profile.png</file>
-    <file>send.svg</file>
     <file>lock.svg</file>
     <file>log-in (1).svg</file>
     <file>log-in.svg</file>
-    <file>log-out (1).svg</file>
     <file>logo.png</file>
+    <file>log-out (1).svg</file>
     <file>moon.svg</file>
     <file>plus.svg</file>
+    <file>profile.png</file>
+    <file>send (1).svg</file>
+    <file>send.svg</file>
+    <file>send-message (2).png</file>
+    <file>send-message.png</file>
     <file>settings.svg</file>
     <file>sun.svg</file>
     <file>trash-2.svg</file>

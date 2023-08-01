@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icons">
+    <file>main-logo.png</file>
     <file>lock.svg</file>
     <file>user.svg</file>
     <file>log-in.svg</file>

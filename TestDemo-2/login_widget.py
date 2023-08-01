@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'c:\Users\MD. SHAMIM\Documents\GitHub\Python-GUI-PyQt6\TestDemo-2\TestDemoLogin.ui'
+# Form implementation generated from reading ui file 'TestDemoLogin.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -93,7 +93,7 @@ class Ui_Form(object):
         self.logo.setFont(font)
         self.logo.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icons/main-logo.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("icons/main-logo.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.logo.setIcon(icon)
         self.logo.setIconSize(QtCore.QSize(70, 30))
         self.logo.setObjectName("logo")
@@ -137,7 +137,7 @@ class Ui_Form(object):
         self.label = QtWidgets.QLabel(parent=self.username_frame)
         self.label.setMaximumSize(QtCore.QSize(20, 20))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap(":/icons/user.svg"))
+        self.label.setPixmap(QtGui.QPixmap("icons/user.svg"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.horizontalLayout_2.addWidget(self.label)
@@ -160,7 +160,7 @@ class Ui_Form(object):
         self.label_2.setMinimumSize(QtCore.QSize(0, 0))
         self.label_2.setMaximumSize(QtCore.QSize(20, 20))
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap(":/icons/lock.svg"))
+        self.label_2.setPixmap(QtGui.QPixmap("icons/lock.svg"))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.horizontalLayout_3.addWidget(self.label_2)
@@ -187,7 +187,7 @@ class Ui_Form(object):
         self.login_btn.setFont(font)
         self.login_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/icons/log-in (1).svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon1.addPixmap(QtGui.QPixmap("icons/log-in (1).svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.login_btn.setIcon(icon1)
         self.login_btn.setObjectName("login_btn")
         self.horizontalLayout_4.addWidget(self.login_btn)
@@ -216,3 +216,13 @@ class Ui_Form(object):
         self.lineEdit_username.setPlaceholderText(_translate("Form", "Enter Username"))
         self.lineEdit_password.setPlaceholderText(_translate("Form", "Enter Password"))
         self.login_btn.setText(_translate("Form", "LOG IN"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Form = QtWidgets.QWidget()
+    ui = Ui_Form()
+    ui.setupUi(Form)
+    Form.show()
+    sys.exit(app.exec())

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>801</width>
-    <height>673</height>
+    <width>863</width>
+    <height>634</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">#sidemenu {
-background-color: #0a676c
+background-color: #063d40
 }
 
 #sidemenu QPushButton{
@@ -26,39 +26,105 @@ padding: 5px;
 
 }
 #menuframe{
-border-top: 2px solid #74afad;
+border-top: 2px solid #0a676c;
 }
 #menuframe QFrame:hover,
 #newconversation QFrame:hover{
-background-color: #74afad;
+background-color:#0a676c;
 color: black;
+}
+#logo_section QFrame{
+background:#F0F8FF;
+border-radius: 5px;
+}
+#login_section QPushButton{
+color: #0a676c;
 }
 
 #newconversation QFrame{
-border: 2px solid #74afad;
+border: 2px solid #0a676c;
 }
-#menuframe QFrame, #newconversation QFrame{
+#menuframe QFrame, 
+#newconversation QFrame{
 border-radius: 5px;
-
 }
 #chatlist{
-background: #0a676c;
+background: #063d40;
 border:noe;
 }
 
 #header{
-background-color: #22767a 
+background-color: #abb2b9
 }
 #header QPushButton {
 border: none;
 background-color: transparent;
 }
 
+#input_frame{
+border: 1px solid #e5e5e5;
+background: #fff;
+border-radius: 10px;
+
+}
+#input_textEdit {
+border: none;
+padding-top: 5px;
+}
+#send_btn{
+border: none;
+padding: 5px;
+border-radius: 5px;
+}
+#send_btn:hover{
+background: #ececf1;
+}
+#main_scrollArea{
+border:none;
+}
+
+#right_main_widget,
+#scrollAreaWidgetContents{
+background: #F0F8FF;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 </string>
   </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_9">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
      <widget class="QWidget" name="sidemenu" native="true">
       <property name="maximumSize">
@@ -84,7 +150,7 @@ background-color: transparent;
         <number>0</number>
        </property>
        <item>
-        <widget class="QFrame" name="newconversation_2">
+        <widget class="QFrame" name="logo_section">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -92,6 +158,12 @@ background-color: transparent;
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
+          <property name="topMargin">
+           <number>9</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
           <item>
            <widget class="QFrame" name="frame_8">
             <property name="font">
@@ -107,19 +179,19 @@ background-color: transparent;
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_6">
              <property name="spacing">
-              <number>0</number>
+              <number>6</number>
              </property>
              <property name="leftMargin">
-              <number>0</number>
+              <number>9</number>
              </property>
              <property name="topMargin">
-              <number>0</number>
+              <number>9</number>
              </property>
              <property name="rightMargin">
-              <number>0</number>
+              <number>9</number>
              </property>
              <property name="bottomMargin">
-              <number>0</number>
+              <number>9</number>
              </property>
              <item>
               <widget class="QLabel" name="label_6">
@@ -139,7 +211,7 @@ background-color: transparent;
                 <string/>
                </property>
                <property name="pixmap">
-                <pixmap resource="Icons/rescources2.qrc">:/icons/logo.png</pixmap>
+                <pixmap resource="Icons/rescources2.qrc">:/icons/main-logo.png</pixmap>
                </property>
                <property name="scaledContents">
                 <bool>true</bool>
@@ -154,6 +226,9 @@ background-color: transparent;
                  <pointsize>10</pointsize>
                  <bold>false</bold>
                 </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: #0a676c;</string>
                </property>
                <property name="text">
                 <string>SOBJANTA</string>
@@ -177,6 +252,9 @@ background-color: transparent;
          <layout class="QVBoxLayout" name="verticalLayout_3">
           <item>
            <widget class="QFrame" name="frame">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -238,6 +316,9 @@ background-color: transparent;
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>
            <widget class="QFrame" name="frame_4">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -276,6 +357,9 @@ background-color: transparent;
           </item>
           <item>
            <widget class="QFrame" name="frame_5">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -314,6 +398,9 @@ background-color: transparent;
           </item>
           <item>
            <widget class="QFrame" name="frame_6">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -352,6 +439,9 @@ background-color: transparent;
           </item>
           <item>
            <widget class="QFrame" name="frame_7">
+            <property name="cursor">
+             <cursorShape>PointingHandCursor</cursorShape>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -395,7 +485,7 @@ background-color: transparent;
      </widget>
     </item>
     <item>
-     <widget class="QWidget" name="rightmainwindow" native="true">
+     <widget class="QWidget" name="right_main_widget" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
@@ -481,7 +571,7 @@ background-color: transparent;
              <item>
               <widget class="QPushButton" name="pushButton_8">
                <property name="text">
-                <string>PushButton</string>
+                <string/>
                </property>
               </widget>
              </item>
@@ -603,7 +693,7 @@ background-color: transparent;
               <number>0</number>
              </property>
              <item>
-              <widget class="QScrollArea" name="scrollArea">
+              <widget class="QScrollArea" name="main_scrollArea">
                <property name="widgetResizable">
                 <bool>true</bool>
                </property>
@@ -612,10 +702,25 @@ background-color: transparent;
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>596</width>
-                  <height>551</height>
+                  <width>651</width>
+                  <height>502</height>
                  </rect>
                 </property>
+                <layout class="QGridLayout" name="gridLayout">
+                 <item row="0" column="0">
+                  <spacer name="verticalSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>425</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
                </widget>
               </widget>
              </item>
@@ -633,7 +738,7 @@ background-color: transparent;
             <property name="maximumSize">
              <size>
               <width>16777215</width>
-              <height>50</height>
+              <height>80</height>
              </size>
             </property>
             <property name="frameShape">
@@ -642,10 +747,7 @@ background-color: transparent;
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_7">
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_13">
              <item>
               <spacer name="horizontalSpacer">
                <property name="orientation">
@@ -663,36 +765,68 @@ background-color: transparent;
               </spacer>
              </item>
              <item>
-              <widget class="QTextEdit" name="textEdit">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>30</height>
-                </size>
+              <widget class="QFrame" name="input_frame">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
                </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushButton_7">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>30</height>
-                </size>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
                </property>
-               <property name="maximumSize">
-                <size>
-                 <width>40</width>
-                 <height>40</height>
-                </size>
-               </property>
-               <property name="text">
-                <string/>
-               </property>
-               <property name="icon">
-                <iconset resource="Icons/rescources2.qrc">
-                 <normaloff>:/icons/send.svg</normaloff>:/icons/send.svg</iconset>
-               </property>
+               <layout class="QGridLayout" name="gridLayout_2">
+                <property name="topMargin">
+                 <number>9</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>9</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QTextEdit" name="input_textEdit">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>11</pointsize>
+                   </font>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QPushButton" name="send_btn">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
+                  <property name="cursor">
+                   <cursorShape>PointingHandCursor</cursorShape>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="Icons/rescources2.qrc">
+                    <normaloff>:/icons/send-message (2).png</normaloff>:/icons/send-message (2).png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>18</width>
+                    <height>18</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </item>
              <item>

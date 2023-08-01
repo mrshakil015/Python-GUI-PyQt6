@@ -21,7 +21,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">#Form{
-background-color:#0a676c
+background-color:#063d40
 }
 
 #loginwidget{
@@ -54,7 +54,7 @@ color: #fff;
 }
 
 #login_btn_frame {
-background-color: #0a676c;
+background-color:  #0a676c;
 border-radius: 5px;
 }
 #login_btn_frame:hover {
@@ -134,7 +134,7 @@ padding-left: 5px
            </property>
            <property name="icon">
             <iconset resource="Icons/rescources1.qrc">
-             <normaloff>:/icons/logo.png</normaloff>:/icons/logo.png</iconset>
+             <normaloff>:/icons/main-logo.png</normaloff>:/icons/main-logo.png</iconset>
            </property>
            <property name="iconSize">
             <size>
