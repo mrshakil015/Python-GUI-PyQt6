@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>profile.png</file>
+    <file>send.svg</file>
+    <file>lock.svg</file>
+    <file>log-in (1).svg</file>
+    <file>log-in.svg</file>
+    <file>log-out (1).svg</file>
+    <file>logo.png</file>
+    <file>moon.svg</file>
+    <file>plus.svg</file>
+    <file>settings.svg</file>
+    <file>sun.svg</file>
+    <file>trash-2.svg</file>
+    <file>user.svg</file>
+  </qresource>
+</RCC>
