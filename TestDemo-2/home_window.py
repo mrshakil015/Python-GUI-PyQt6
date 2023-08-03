@@ -1,10 +1,10 @@
 from PyQt6.QtWidgets import QWidget
 
-from home_widget import Ui_MainWindow
+from home_window_ui import Ui_Form as Home_Form
+
 
 class HomeWindow(QWidget):
-    def __init__(self):
-        sueper().__init__()
-
-        self.home_ui = Ui_MainWindow()
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.home_ui = Home_Form()
         self.home_ui.setupUi(self)

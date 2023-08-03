@@ -1,5 +1,6 @@
 import sqlite3
 import json
+import os
 
 class ConnectDB:
     def __init__(self):
@@ -7,9 +8,10 @@ class ConnectDB:
 
     
     def get_chat_data(self):
-        with open(self.chat_db_path, "r") as f:
-            chat_db = json.load(f)
-        
+        chat_db = []
+        if os.path.exists(self.chat_db_path) and os.path.getsize(self.chat_db_path) > 0:
+            with open(self.chat_db_path, "r") as f:
+                chat_db = json.load(f)
         return chat_db
 
     def get_chat_title_list(self):
@@ -22,11 +24,11 @@ class ConnectDB:
     
     def save_chat_data(self, new_chat_data):
         with open(self.chat_db_path, "w") as f:
-            f.write(json.dups(new_chat_data))
+            f.write(json.dumps(new_chat_data))
     
     def delete_all_data(self):
         chat_db = self.get_chat_data()
-        chat_db.Clear()
+        chat_db.clear()
         self.save_chat_data(chat_db)
     
     def delete_chat_data(self, index):

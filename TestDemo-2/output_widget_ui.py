@@ -49,7 +49,7 @@ class Ui_Form(object):
         self.label.setMinimumSize(QtCore.QSize(40, 25))
         self.label.setMaximumSize(QtCore.QSize(30, 20))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("icons/main-logo.png"))
+        self.label.setPixmap(QtGui.QPixmap(":/icons/main-logo.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.gridLayout_4.addWidget(self.label, 0, 0, 1, 1)

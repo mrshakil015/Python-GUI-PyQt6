@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(863, 634)
+        MainWindow.resize(776, 550)
         MainWindow.setStyleSheet("#sidemenu {\n"
 "background-color: #063d40\n"
 "}\n"
@@ -24,18 +24,54 @@ class Ui_MainWindow(object):
 "padding: 5px;\n"
 "\n"
 "}\n"
+"\n"
 "#menuframe{\n"
 "border-top: 2px solid #0a676c;\n"
 "}\n"
+"\n"
 "#menuframe QFrame:hover,\n"
+"#chatlist::item:hover,\n"
 "#newconversation QFrame:hover{\n"
 "background-color:#0a676c;\n"
 "color: black;\n"
 "}\n"
-"#logo_section QFrame{\n"
+"\n"
+"#chatlist::item:selected {\n"
+"    background-color: #0a676c;\n"
+"}\n"
+"\n"
+"#chatlist {\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"#chatlist::item {\n"
+"    color: #fff;\n"
+"    padding: 10px;\n"
+"    border-radius: 5px;\n"
+"    margin-top:5px;\n"
+"}\n"
+"\n"
+"#chatlist_scrollArea {\n"
+"  border: none;\n"
+"}\n"
+"\n"
+"#header{\n"
+"background-color: #063d40\n"
+"}\n"
+"#header QPushButton {\n"
+"border: none;\n"
+"background-color: transparent;\n"
+"}\n"
+"\n"
+"#logo_section QFrame, #companyname_section{\n"
 "background:#F0F8FF;\n"
 "border-radius: 5px;\n"
 "}\n"
+"#company_name{\n"
+"padding-left: 5px;\n"
+"color: #0A676C;\n"
+"}\n"
+"\n"
 "#login_section QPushButton{\n"
 "color: #0a676c;\n"
 "}\n"
@@ -43,6 +79,7 @@ class Ui_MainWindow(object):
 "#newconversation QFrame{\n"
 "border: 2px solid #0a676c;\n"
 "}\n"
+"\n"
 "#menuframe QFrame, \n"
 "#newconversation QFrame{\n"
 "border-radius: 5px;\n"
@@ -50,14 +87,6 @@ class Ui_MainWindow(object):
 "#chatlist{\n"
 "background: #063d40;\n"
 "border:noe;\n"
-"}\n"
-"\n"
-"#header{\n"
-"background-color: #abb2b9\n"
-"}\n"
-"#header QPushButton {\n"
-"border: none;\n"
-"background-color: transparent;\n"
 "}\n"
 "\n"
 "#input_frame{\n"
@@ -69,6 +98,7 @@ class Ui_MainWindow(object):
 "#input_textEdit {\n"
 "border: none;\n"
 "padding-top: 5px;\n"
+"padding-left: 5px;\n"
 "}\n"
 "#send_btn{\n"
 "border: none;\n"
@@ -102,6 +132,7 @@ class Ui_MainWindow(object):
 "")
         MainWindow.setToolButtonStyle(QtCore.Qt.ToolButtonStyle.ToolButtonIconOnly)
         MainWindow.setTabShape(QtWidgets.QTabWidget.TabShape.Rounded)
+        MainWindow.setUnifiedTitleAndToolBarOnMac(False)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.centralwidget)
@@ -181,11 +212,12 @@ class Ui_MainWindow(object):
         self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_2.setObjectName("frame_2")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.frame_2)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.gridLayout_3 = QtWidgets.QGridLayout(self.frame_2)
+        self.gridLayout_3.setObjectName("gridLayout_3")
         self.chatlist = QtWidgets.QListView(parent=self.frame_2)
+        self.chatlist.viewport().setProperty("cursor", QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.chatlist.setObjectName("chatlist")
-        self.verticalLayout_2.addWidget(self.chatlist)
+        self.gridLayout_3.addWidget(self.chatlist, 0, 0, 1, 1)
         self.verticalLayout_6.addWidget(self.frame_2)
         self.menuframe = QtWidgets.QFrame(parent=self.sidemenu)
         self.menuframe.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
@@ -229,24 +261,6 @@ class Ui_MainWindow(object):
         self.pushButton_3.setObjectName("pushButton_3")
         self.horizontalLayout_2.addWidget(self.pushButton_3)
         self.verticalLayout.addWidget(self.frame_5)
-        self.frame_6 = QtWidgets.QFrame(parent=self.menuframe)
-        self.frame_6.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.frame_6.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_6.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_6.setObjectName("frame_6")
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_6)
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.label_3 = QtWidgets.QLabel(parent=self.frame_6)
-        self.label_3.setMaximumSize(QtCore.QSize(18, 18))
-        self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap(":/icons/moon.svg"))
-        self.label_3.setScaledContents(True)
-        self.label_3.setObjectName("label_3")
-        self.horizontalLayout_3.addWidget(self.label_3)
-        self.pushButton_4 = QtWidgets.QPushButton(parent=self.frame_6)
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.horizontalLayout_3.addWidget(self.pushButton_4)
-        self.verticalLayout.addWidget(self.frame_6)
         self.frame_7 = QtWidgets.QFrame(parent=self.menuframe)
         self.frame_7.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.frame_7.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
@@ -275,54 +289,59 @@ class Ui_MainWindow(object):
         self.right_main_widget.setSizePolicy(sizePolicy)
         self.right_main_widget.setMinimumSize(QtCore.QSize(600, 550))
         self.right_main_widget.setObjectName("right_main_widget")
-        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.right_main_widget)
-        self.verticalLayout_5.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetDefaultConstraint)
-        self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_5.setSpacing(0)
-        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.gridLayout_4 = QtWidgets.QGridLayout(self.right_main_widget)
+        self.gridLayout_4.setSizeConstraint(QtWidgets.QLayout.SizeConstraint.SetDefaultConstraint)
+        self.gridLayout_4.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_4.setObjectName("gridLayout_4")
         self.header = QtWidgets.QWidget(parent=self.right_main_widget)
-        self.header.setMinimumSize(QtCore.QSize(0, 50))
+        self.header.setMinimumSize(QtCore.QSize(0, 60))
         self.header.setMaximumSize(QtCore.QSize(16777215, 50))
         self.header.setObjectName("header")
-        self.horizontalLayout_10 = QtWidgets.QHBoxLayout(self.header)
-        self.horizontalLayout_10.setContentsMargins(0, 0, -1, 0)
-        self.horizontalLayout_10.setSpacing(0)
-        self.horizontalLayout_10.setObjectName("horizontalLayout_10")
-        self.frame_3 = QtWidgets.QFrame(parent=self.header)
-        self.frame_3.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_3.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_3.setObjectName("frame_3")
-        self.horizontalLayout_11 = QtWidgets.QHBoxLayout(self.frame_3)
-        self.horizontalLayout_11.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_11.setSpacing(0)
-        self.horizontalLayout_11.setObjectName("horizontalLayout_11")
-        self.pushButton_8 = QtWidgets.QPushButton(parent=self.frame_3)
-        self.pushButton_8.setText("")
-        self.pushButton_8.setObjectName("pushButton_8")
-        self.horizontalLayout_11.addWidget(self.pushButton_8)
-        self.horizontalLayout_10.addWidget(self.frame_3)
-        spacerItem = QtWidgets.QSpacerItem(594, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_10.addItem(spacerItem)
+        self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.header)
+        self.horizontalLayout_7.setObjectName("horizontalLayout_7")
+        spacerItem = QtWidgets.QSpacerItem(154, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_7.addItem(spacerItem)
+        self.companyname_section = QtWidgets.QFrame(parent=self.header)
+        self.companyname_section.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
+        self.companyname_section.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.companyname_section.setObjectName("companyname_section")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.companyname_section)
+        self.verticalLayout_2.setContentsMargins(-1, 0, -1, 0)
+        self.verticalLayout_2.setSpacing(0)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.company_name = QtWidgets.QLabel(parent=self.companyname_section)
+        font = QtGui.QFont()
+        font.setFamily("Arial Black")
+        font.setPointSize(11)
+        font.setBold(True)
+        self.company_name.setFont(font)
+        self.company_name.setObjectName("company_name")
+        self.verticalLayout_2.addWidget(self.company_name)
+        self.horizontalLayout_7.addWidget(self.companyname_section)
+        spacerItem1 = QtWidgets.QSpacerItem(132, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_7.addItem(spacerItem1)
         self.frame_11 = QtWidgets.QFrame(parent=self.header)
-        self.frame_11.setMinimumSize(QtCore.QSize(30, 30))
-        self.frame_11.setMaximumSize(QtCore.QSize(30, 30))
+        self.frame_11.setMinimumSize(QtCore.QSize(40, 40))
+        self.frame_11.setMaximumSize(QtCore.QSize(40, 40))
         self.frame_11.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_11.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_11.setObjectName("frame_11")
-        self.horizontalLayout_12 = QtWidgets.QHBoxLayout(self.frame_11)
-        self.horizontalLayout_12.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_12.setSpacing(0)
-        self.horizontalLayout_12.setObjectName("horizontalLayout_12")
+        self.gridLayout_11 = QtWidgets.QGridLayout(self.frame_11)
+        self.gridLayout_11.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_11.setSpacing(6)
+        self.gridLayout_11.setObjectName("gridLayout_11")
         self.pushButton_9 = QtWidgets.QPushButton(parent=self.frame_11)
         self.pushButton_9.setText("")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/icons/profile.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_9.setIcon(icon1)
-        self.pushButton_9.setIconSize(QtCore.QSize(28, 28))
+        self.pushButton_9.setIconSize(QtCore.QSize(35, 35))
         self.pushButton_9.setObjectName("pushButton_9")
-        self.horizontalLayout_12.addWidget(self.pushButton_9)
-        self.horizontalLayout_10.addWidget(self.frame_11)
-        self.verticalLayout_5.addWidget(self.header)
+        self.gridLayout_11.addWidget(self.pushButton_9, 0, 0, 1, 1)
+        self.horizontalLayout_7.addWidget(self.frame_11)
+        spacerItem2 = QtWidgets.QSpacerItem(10, 20, QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_7.addItem(spacerItem2)
+        self.gridLayout_4.addWidget(self.header, 0, 0, 1, 1, QtCore.Qt.AlignmentFlag.AlignTop)
         self.message_area = QtWidgets.QWidget(parent=self.right_main_widget)
         self.message_area.setObjectName("message_area")
         self.verticalLayout_7 = QtWidgets.QVBoxLayout(self.message_area)
@@ -333,47 +352,41 @@ class Ui_MainWindow(object):
         self.frame_9.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_9.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_9.setObjectName("frame_9")
-        self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.frame_9)
-        self.horizontalLayout_8.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_8.setSpacing(0)
-        self.horizontalLayout_8.setObjectName("horizontalLayout_8")
+        self.gridLayout_5 = QtWidgets.QGridLayout(self.frame_9)
+        self.gridLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_5.setObjectName("gridLayout_5")
         self.main_scrollArea = QtWidgets.QScrollArea(parent=self.frame_9)
         self.main_scrollArea.setWidgetResizable(True)
         self.main_scrollArea.setObjectName("main_scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 651, 502))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 598, 383))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.gridLayout = QtWidgets.QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout.setObjectName("gridLayout")
-        spacerItem1 = QtWidgets.QSpacerItem(20, 425, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
-        self.gridLayout.addItem(spacerItem1, 0, 0, 1, 1)
+        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        self.gridLayout.addItem(spacerItem3, 0, 0, 1, 1)
         self.main_scrollArea.setWidget(self.scrollAreaWidgetContents)
-        self.horizontalLayout_8.addWidget(self.main_scrollArea)
+        self.gridLayout_5.addWidget(self.main_scrollArea, 0, 0, 1, 1)
         self.verticalLayout_7.addWidget(self.frame_9)
         self.frame_10 = QtWidgets.QFrame(parent=self.message_area)
-        self.frame_10.setMinimumSize(QtCore.QSize(0, 50))
-        self.frame_10.setMaximumSize(QtCore.QSize(16777215, 80))
+        self.frame_10.setMinimumSize(QtCore.QSize(0, 0))
+        self.frame_10.setMaximumSize(QtCore.QSize(16777215, 100))
         self.frame_10.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_10.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_10.setObjectName("frame_10")
-        self.horizontalLayout_13 = QtWidgets.QHBoxLayout(self.frame_10)
-        self.horizontalLayout_13.setObjectName("horizontalLayout_13")
-        spacerItem2 = QtWidgets.QSpacerItem(30, 20, QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_13.addItem(spacerItem2)
+        self.gridLayout_9 = QtWidgets.QGridLayout(self.frame_10)
+        self.gridLayout_9.setContentsMargins(-1, -1, -1, 16)
+        self.gridLayout_9.setObjectName("gridLayout_9")
+        spacerItem4 = QtWidgets.QSpacerItem(30, 20, QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.gridLayout_9.addItem(spacerItem4, 0, 0, 1, 1)
         self.input_frame = QtWidgets.QFrame(parent=self.frame_10)
         self.input_frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.input_frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.input_frame.setObjectName("input_frame")
         self.gridLayout_2 = QtWidgets.QGridLayout(self.input_frame)
-        self.gridLayout_2.setContentsMargins(-1, 9, -1, 9)
+        self.gridLayout_2.setContentsMargins(0, 0, 7, 0)
+        self.gridLayout_2.setSpacing(0)
         self.gridLayout_2.setObjectName("gridLayout_2")
-        self.input_textEdit = QtWidgets.QTextEdit(parent=self.input_frame)
-        self.input_textEdit.setMinimumSize(QtCore.QSize(0, 30))
-        font = QtGui.QFont()
-        font.setPointSize(11)
-        self.input_textEdit.setFont(font)
-        self.input_textEdit.setObjectName("input_textEdit")
-        self.gridLayout_2.addWidget(self.input_textEdit, 0, 0, 1, 1)
         self.send_btn = QtWidgets.QPushButton(parent=self.input_frame)
         self.send_btn.setMinimumSize(QtCore.QSize(0, 0))
         self.send_btn.setMaximumSize(QtCore.QSize(16777215, 16777215))
@@ -385,11 +398,18 @@ class Ui_MainWindow(object):
         self.send_btn.setIconSize(QtCore.QSize(18, 18))
         self.send_btn.setObjectName("send_btn")
         self.gridLayout_2.addWidget(self.send_btn, 0, 1, 1, 1)
-        self.horizontalLayout_13.addWidget(self.input_frame)
-        spacerItem3 = QtWidgets.QSpacerItem(30, 20, QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_13.addItem(spacerItem3)
+        self.input_textEdit = QtWidgets.QTextEdit(parent=self.input_frame)
+        self.input_textEdit.setMinimumSize(QtCore.QSize(0, 50))
+        font = QtGui.QFont()
+        font.setPointSize(11)
+        self.input_textEdit.setFont(font)
+        self.input_textEdit.setObjectName("input_textEdit")
+        self.gridLayout_2.addWidget(self.input_textEdit, 0, 0, 1, 1)
+        self.gridLayout_9.addWidget(self.input_frame, 0, 1, 1, 1)
+        spacerItem5 = QtWidgets.QSpacerItem(30, 20, QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.gridLayout_9.addItem(spacerItem5, 0, 2, 1, 1)
         self.verticalLayout_7.addWidget(self.frame_10)
-        self.verticalLayout_5.addWidget(self.message_area)
+        self.gridLayout_4.addWidget(self.message_area, 1, 0, 1, 1)
         self.horizontalLayout_9.addWidget(self.right_main_widget)
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -398,10 +418,11 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "SOBJANTA"))
         self.pushButton_6.setText(_translate("MainWindow", "SOBJANTA"))
         self.pushButton.setText(_translate("MainWindow", "New Conversation"))
         self.pushButton_2.setText(_translate("MainWindow", "Clear History"))
         self.pushButton_3.setText(_translate("MainWindow", "Setting"))
-        self.pushButton_4.setText(_translate("MainWindow", "Mode"))
         self.pushButton_5.setText(_translate("MainWindow", "Log Out"))
+        self.company_name.setText(_translate("MainWindow", "Bangladesh Bank Ltd."))
+        self.input_textEdit.setPlaceholderText(_translate("MainWindow", "Send a message"))
