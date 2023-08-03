@@ -21,7 +21,6 @@ class Ui_Form(object):
 "#loginwidget{\n"
 "background-color: #fff;\n"
 "border-radius: 10px;\n"
-"box-shadow: 5px 5px 10px black;\n"
 "}\n"
 "\n"
 "\n"
@@ -93,7 +92,7 @@ class Ui_Form(object):
         self.logo.setFont(font)
         self.logo.setText("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("icons/logo.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap("icons/main-logo.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.logo.setIcon(icon)
         self.logo.setIconSize(QtCore.QSize(70, 30))
         self.logo.setObjectName("logo")

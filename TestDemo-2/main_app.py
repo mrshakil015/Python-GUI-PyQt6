@@ -9,6 +9,7 @@ from PyQt6.QtGui import QIcon, QStandardItemModel, QStandardItem, QAction
 from home_widget import Ui_MainWindow
 from home_window import HomeWindow
 from chat_window import ChatWindow
+from login_window import LoginWindow
 from connect_db import ConnectDB
 
 import ai_chat
@@ -102,6 +103,8 @@ class MainWindow(QMainWindow):
         self.main_scrollArea = self.ui.main_scrollArea
         self.clear_conversations_btn = self.ui.pushButton_2
         self.logout_btn = self.ui.pushButton_5
+        self.profile_btn = self.ui.pushButton_9
+        self.sidemenu = self.ui.sidemenu
 
         #Hide scrollbar of main scroll area
         self.main_scrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
@@ -122,9 +125,16 @@ class MainWindow(QMainWindow):
         self.new_chat_btn.clicked.connect(self.create_new_chat)
         self.clear_conversations_btn.clicked.connect(self.clear_conversations)
         self.logout_btn.clicked.connect(self.logout)
+        self.profile_btn.clicked.connect(self.profile_section)
 
 
 #--------------Function for main window----------------
+
+    #create profile section
+    def profile_section(self):
+        self.show_profile_window()
+        self.show_chatlist(selected_index=None)
+
     #create a new chat
     def create_new_chat(self):
         self.show_home_window()
@@ -135,7 +145,6 @@ class MainWindow(QMainWindow):
         self.connect_db.delete_all_data()
         self.show_chatlist()
 
-    #Get response
     def get_response(self):
         message_input = self.message_input.toPlainText().strip()
 
@@ -143,7 +152,7 @@ class MainWindow(QMainWindow):
 
         if message_input:
             response_list = ai_chat.get_response(message_input)
-            response_str = "\n".join(response_list)
+            response_str = str(response_list)
 
             #Check if open a chat
             if self.ui.chatlist.selectedIndexes():
@@ -231,6 +240,13 @@ class MainWindow(QMainWindow):
         grid_layout = self.clear_main_scroll_area()
         home_window = HomeWindow()
         grid_layout.addWidget(home_window)
+
+    #show profile window
+    def show_profile_window(self):
+        grid_layout =self.clear_main_scroll_area()
+        login_window = LoginWindow()
+        grid_layout.addWidget(login_window)
+
     
     #show one chat data in main chat window
     def show_chat_window(self, chat_data):
@@ -366,11 +382,11 @@ class MainWindow(QMainWindow):
         self.on_chatlist_clicked()
 
     # Show a default window if there is no chat is selected
-    def show_home_window(self):
-        grid_layout = self.clear_main_scroll_area()
-        # show new message
-        home_window = HomeWindow()
-        grid_layout.addWidget(home_window) 
+    # def show_home_window(self):
+    #     grid_layout = self.clear_main_scroll_area()
+    #     # show new message
+    #     home_window = HomeWindow()
+    #     grid_layout.addWidget(home_window) 
     
     ## Functions for chat list ///////////////////////////////
     # Delete a chat form chat list

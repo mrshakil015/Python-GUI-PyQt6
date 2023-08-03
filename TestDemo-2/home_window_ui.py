@@ -12,14 +12,15 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(945, 657)
+        Form.resize(765, 657)
+        Form.setStyleSheet("background: #F0F8FF")
         self.gridLayout = QtWidgets.QGridLayout(Form)
         self.gridLayout.setVerticalSpacing(30)
         self.gridLayout.setObjectName("gridLayout")
         self.label_6 = QtWidgets.QLabel(parent=Form)
         font = QtGui.QFont()
         font.setPointSize(20)
-        font.setBold(False)
+        font.setBold(True)
         self.label_6.setFont(font)
         self.label_6.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.label_6.setObjectName("label_6")
@@ -55,7 +56,7 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.label_7.setFont(font)
-        self.label_7.setStyleSheet("background: #f7f7f8;\n"
+        self.label_7.setStyleSheet("background: #ced6dc;\n"
 "border-radius: 8px;\n"
 "padding: 10px;")
         self.label_7.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -66,7 +67,7 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.label_8.setFont(font)
-        self.label_8.setStyleSheet("background: #f7f7f8;\n"
+        self.label_8.setStyleSheet("background: #ced6dc;\n"
 "border-radius: 8px;\n"
 "padding: 10px;")
         self.label_8.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -77,7 +78,7 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.label_9.setFont(font)
-        self.label_9.setStyleSheet("background: #f7f7f8;\n"
+        self.label_9.setStyleSheet("background: #ced6dc;\n"
 "border-radius: 8px;\n"
 "padding: 10px;")
         self.label_9.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -100,6 +101,7 @@ class Ui_Form(object):
         self.toolButton_2 = QtWidgets.QToolButton(parent=self.frame_8)
         font = QtGui.QFont()
         font.setPointSize(11)
+        font.setBold(True)
         self.toolButton_2.setFont(font)
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap(":/icons/icons/lightning-charge.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
@@ -116,7 +118,7 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.label_12.setFont(font)
-        self.label_12.setStyleSheet("background: #f7f7f8;\n"
+        self.label_12.setStyleSheet("background: #ced6dc;\n"
 "border-radius: 8px;\n"
 "padding: 10px;")
         self.label_12.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -127,7 +129,7 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.label_11.setFont(font)
-        self.label_11.setStyleSheet("background: #f7f7f8;\n"
+        self.label_11.setStyleSheet("background: #ced6dc;\n"
 "border-radius: 8px;\n"
 "padding: 10px;")
         self.label_11.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -138,7 +140,7 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.label_10.setFont(font)
-        self.label_10.setStyleSheet("background: #f7f7f8;\n"
+        self.label_10.setStyleSheet("background: #ced6dc;\n"
 "border-radius: 8px;\n"
 "padding: 10px;")
         self.label_10.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -177,7 +179,7 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.label_15.setFont(font)
-        self.label_15.setStyleSheet("background: #f7f7f8;\n"
+        self.label_15.setStyleSheet("background: #ced6dc;\n"
 "border-radius: 8px;\n"
 "padding: 10px;")
         self.label_15.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -188,7 +190,7 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.label_14.setFont(font)
-        self.label_14.setStyleSheet("background: #f7f7f8;\n"
+        self.label_14.setStyleSheet("background: #ced6dc;\n"
 "border-radius: 8px;\n"
 "padding: 10px;")
         self.label_14.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -199,7 +201,7 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.label_13.setFont(font)
-        self.label_13.setStyleSheet("background: #f7f7f8;\n"
+        self.label_13.setStyleSheet("background: #ced6dc;\n"
 "border-radius: 8px;\n"
 "padding: 10px;")
         self.label_13.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
@@ -218,16 +220,16 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label_6.setText(_translate("Form", "ChatGPT"))
-        self.toolButton.setText(_translate("Form", "Examples"))
-        self.label_7.setText(_translate("Form", "\"Explain quantum computing in simple terms\" →"))
-        self.label_8.setText(_translate("Form", "\"Got any creative ideas for a 10 year old’s birthday?\" →"))
-        self.label_9.setText(_translate("Form", "\"How do I make an HTTP request in Javascript?\" →"))
+        self.label_6.setText(_translate("Form", "SOBJANTA"))
+        self.toolButton.setText(_translate("Form", ""))
+        self.label_7.setText(_translate("Form", "For Up-To-Date Information Add Find/Search At The Beginning."))
+        self.label_8.setText(_translate("Form", ""))
+        self.label_9.setText(_translate("Form", ""))
         self.toolButton_2.setText(_translate("Form", "Capabilities"))
-        self.label_12.setText(_translate("Form", "Remembers what user said earlier in the conversation"))
-        self.label_11.setText(_translate("Form", "Allows user to provide follow-up corrections"))
-        self.label_10.setText(_translate("Form", "Trained to decline inappropriate requests"))
-        self.toolButton_3.setText(_translate("Form", "Limitations"))
-        self.label_15.setText(_translate("Form", "May occasionally generate incorrect information"))
-        self.label_14.setText(_translate("Form", "May occasionally produce harmful instructions or biased content"))
-        self.label_13.setText(_translate("Form", "Limited knowledge of world and events after 2021"))
+        self.label_12.setText(_translate("Form", "I Can Provide Answer Your Questions, Generate Code, Suggestions, Problem Solutions etc."))
+        self.label_11.setText(_translate("Form", "Example:\"Search Current Time in Bangladesh Right Now\""))
+        self.label_10.setText(_translate("Form", ""))
+        self.toolButton_3.setText(_translate("Form", ""))
+        self.label_15.setText(_translate("Form", "I Can Provide Real-time Or Up- To-Date Information Like Time, Weather, News, etc..."))
+        self.label_14.setText(_translate("Form", ""))
+        self.label_13.setText(_translate("Form", ""))

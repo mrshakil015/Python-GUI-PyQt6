@@ -14,7 +14,7 @@ class Ui_Form(object):
         Form.setObjectName("Form")
         Form.resize(788, 222)
         Form.setMinimumSize(QtCore.QSize(0, 0))
-        Form.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        # Form.setMaximumSize(QtCore.QSize(16777215, 16777215))
         Form.setStyleSheet("")
         self.gridLayout_2 = QtWidgets.QGridLayout(Form)
         self.gridLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -52,7 +52,8 @@ class Ui_Form(object):
         self.label.setPixmap(QtGui.QPixmap("icons/main-logo.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
-        self.gridLayout_4.addWidget(self.label, 0, 0, 1, 1)
+
+        self.gridLayout_4.addWidget(self.label, 0, 0, 1, 1, QtCore.Qt.AlignmentFlag.AlignTop)
         spacerItem = QtWidgets.QSpacerItem(20, 77, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Preferred)
         self.gridLayout_4.addItem(spacerItem, 1, 0, 1, 1)
         self.gridLayout_5.addWidget(self.frame_2, 0, 0, 1, 1)

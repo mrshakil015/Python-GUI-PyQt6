@@ -711,7 +711,7 @@ background: #F0F8FF;
                   <x>0</x>
                   <y>0</y>
                   <width>598</width>
-                  <height>383</height>
+                  <height>382</height>
                  </rect>
                 </property>
                 <layout class="QGridLayout" name="gridLayout">
@@ -758,11 +758,11 @@ background: #F0F8FF;
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <layout class="QGridLayout" name="gridLayout_9">
+            <layout class="QHBoxLayout" name="horizontalLayout_3">
              <property name="bottomMargin">
               <number>16</number>
              </property>
-             <item row="0" column="0">
+             <item>
               <spacer name="horizontalSpacer">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
@@ -778,7 +778,7 @@ background: #F0F8FF;
                </property>
               </spacer>
              </item>
-             <item row="0" column="1">
+             <item>
               <widget class="QFrame" name="input_frame">
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
@@ -786,7 +786,10 @@ background: #F0F8FF;
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
-               <layout class="QGridLayout" name="gridLayout_2">
+               <layout class="QHBoxLayout" name="horizontalLayout_8">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
                 <property name="leftMargin">
                  <number>0</number>
                 </property>
@@ -799,10 +802,25 @@ background: #F0F8FF;
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
-                <property name="spacing">
-                 <number>0</number>
-                </property>
-                <item row="0" column="1">
+                <item>
+                 <widget class="QTextEdit" name="input_textEdit">
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>50</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>11</pointsize>
+                   </font>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Send a message</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
                  <widget class="QPushButton" name="send_btn">
                   <property name="minimumSize">
                    <size>
@@ -834,28 +852,10 @@ background: #F0F8FF;
                   </property>
                  </widget>
                 </item>
-                <item row="0" column="0">
-                 <widget class="QTextEdit" name="input_textEdit">
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>50</height>
-                   </size>
-                  </property>
-                  <property name="font">
-                   <font>
-                    <pointsize>11</pointsize>
-                   </font>
-                  </property>
-                  <property name="placeholderText">
-                   <string>Send a message</string>
-                  </property>
-                 </widget>
-                </item>
                </layout>
               </widget>
              </item>
-             <item row="0" column="2">
+             <item>
               <spacer name="horizontalSpacer_2">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
