@@ -163,6 +163,9 @@ padding-bottom: 5px;
           <pointsize>11</pointsize>
          </font>
         </property>
+        <property name="cursor">
+         <cursorShape>IBeamCursor</cursorShape>
+        </property>
         <property name="text">
          <string>Bangladesh is a country located in southern Asia. The country is bordered by India to the west, north, and east, and by Burma to the southeast. Bangladesh has a population of over 162 million people and an area of 147,570 square kilometers. The capital and largest city is Dhaka.Bangladesh is a country located in South Asia. It is bordered by India to the east, west, and north, and by the Bay of Bengal to the south. It has a population of around 166 million people, making it the 8th most populous country in the world. Bangladesh is a developing country and has an economy that is reliant on agriculture, with rice being its major export. The capital city is Dhaka, where many of the country’s airports, universities, and government offices are located. Bangladesh is home to a variety of cultures, religions, and languages, with the official language being Bengali. Bangladesh is a member of the Commonwealth of Nations and the United Nations. The country has experienced significant progress in recent years, with a decrease in poverty levels and an increase in primary school enrollment. The Bangladeshi economy is growing at an estimated 6% per year.</string>
         </property>

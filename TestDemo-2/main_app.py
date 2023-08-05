@@ -112,8 +112,8 @@ class MainWindow(QMainWindow):
 
         
         #resize input frame and textEdit
-        self.message_input.setFixedHeight(24)
-        self.input_frame.setFixedHeight(42)
+        # self.message_input.setFixedHeight(24)
+        # self.input_frame.setFixedHeight(42)
 
 
         #set data for main window when start app

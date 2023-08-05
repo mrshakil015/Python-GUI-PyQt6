@@ -103,7 +103,7 @@ padding-left: 5px;
 }
 #send_btn{
 border: none;
-padding: 10px;
+padding: 5px;
 border-radius: 5px;
 }
 #send_btn:hover{
@@ -760,7 +760,7 @@ background: #F0F8FF;
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_3">
              <property name="bottomMargin">
-              <number>16</number>
+              <number>7</number>
              </property>
              <item>
               <spacer name="horizontalSpacer">

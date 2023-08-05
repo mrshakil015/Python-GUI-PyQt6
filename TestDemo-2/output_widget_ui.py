@@ -68,6 +68,7 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setPointSize(11)
         self.label_2.setFont(font)
+        self.label_2.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.IBeamCursor))
         self.label_2.setMouseTracking(False)
         self.label_2.setStyleSheet("border:none;\n"
 "color: #fff;")

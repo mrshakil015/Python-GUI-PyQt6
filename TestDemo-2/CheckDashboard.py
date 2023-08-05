@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'DashboardTestDemo.ui'
+# Form implementation generated from reading ui file 'CheckDashboard.ui'
 #
 # Created by: PyQt6 UI code generator 6.4.2
 #
@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(863, 634)
+        MainWindow.resize(776, 550)
         MainWindow.setStyleSheet("#sidemenu {\n"
 "background-color: #063d40\n"
 "}\n"
@@ -98,10 +98,11 @@ class Ui_MainWindow(object):
 "#input_textEdit {\n"
 "border: none;\n"
 "padding-top: 5px;\n"
+"padding-left: 5px;\n"
 "}\n"
 "#send_btn{\n"
 "border: none;\n"
-"padding: 10px;\n"
+"padding: 5px;\n"
 "border-radius: 5px;\n"
 "}\n"
 "#send_btn:hover{\n"
@@ -131,6 +132,7 @@ class Ui_MainWindow(object):
 "")
         MainWindow.setToolButtonStyle(QtCore.Qt.ToolButtonStyle.ToolButtonIconOnly)
         MainWindow.setTabShape(QtWidgets.QTabWidget.TabShape.Rounded)
+        MainWindow.setUnifiedTitleAndToolBarOnMac(False)
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.centralwidget)
@@ -166,7 +168,7 @@ class Ui_MainWindow(object):
         self.label_6.setMinimumSize(QtCore.QSize(38, 20))
         self.label_6.setMaximumSize(QtCore.QSize(38, 20))
         self.label_6.setText("")
-        self.label_6.setPixmap(QtGui.QPixmap("icons/main-logo.png"))
+        self.label_6.setPixmap(QtGui.QPixmap(":/icons/main-logo.png"))
         self.label_6.setScaledContents(True)
         self.label_6.setObjectName("label_6")
         self.horizontalLayout_6.addWidget(self.label_6)
@@ -199,7 +201,7 @@ class Ui_MainWindow(object):
         font.setBold(True)
         self.pushButton.setFont(font)
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("icons/plus.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap(":/icons/plus.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton.setIcon(icon)
         self.pushButton.setIconSize(QtCore.QSize(18, 18))
         self.pushButton.setObjectName("pushButton")
@@ -233,7 +235,7 @@ class Ui_MainWindow(object):
         self.label = QtWidgets.QLabel(parent=self.frame_4)
         self.label.setMaximumSize(QtCore.QSize(18, 18))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("icons/trash-2.svg"))
+        self.label.setPixmap(QtGui.QPixmap(":/icons/trash-2.svg"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.horizontalLayout.addWidget(self.label)
@@ -251,7 +253,7 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(parent=self.frame_5)
         self.label_2.setMaximumSize(QtCore.QSize(18, 18))
         self.label_2.setText("")
-        self.label_2.setPixmap(QtGui.QPixmap("icons/settings.svg"))
+        self.label_2.setPixmap(QtGui.QPixmap(":/icons/settings.svg"))
         self.label_2.setScaledContents(True)
         self.label_2.setObjectName("label_2")
         self.horizontalLayout_2.addWidget(self.label_2)
@@ -259,24 +261,6 @@ class Ui_MainWindow(object):
         self.pushButton_3.setObjectName("pushButton_3")
         self.horizontalLayout_2.addWidget(self.pushButton_3)
         self.verticalLayout.addWidget(self.frame_5)
-        self.frame_6 = QtWidgets.QFrame(parent=self.menuframe)
-        self.frame_6.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
-        self.frame_6.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_6.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_6.setObjectName("frame_6")
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_6)
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.label_3 = QtWidgets.QLabel(parent=self.frame_6)
-        self.label_3.setMaximumSize(QtCore.QSize(18, 18))
-        self.label_3.setText("")
-        self.label_3.setPixmap(QtGui.QPixmap("icons/moon.svg"))
-        self.label_3.setScaledContents(True)
-        self.label_3.setObjectName("label_3")
-        self.horizontalLayout_3.addWidget(self.label_3)
-        self.pushButton_4 = QtWidgets.QPushButton(parent=self.frame_6)
-        self.pushButton_4.setObjectName("pushButton_4")
-        self.horizontalLayout_3.addWidget(self.pushButton_4)
-        self.verticalLayout.addWidget(self.frame_6)
         self.frame_7 = QtWidgets.QFrame(parent=self.menuframe)
         self.frame_7.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.frame_7.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
@@ -287,7 +271,7 @@ class Ui_MainWindow(object):
         self.label_4 = QtWidgets.QLabel(parent=self.frame_7)
         self.label_4.setMaximumSize(QtCore.QSize(18, 18))
         self.label_4.setText("")
-        self.label_4.setPixmap(QtGui.QPixmap("icons/log-out (1).svg"))
+        self.label_4.setPixmap(QtGui.QPixmap(":/icons/log-out (1).svg"))
         self.label_4.setScaledContents(True)
         self.label_4.setObjectName("label_4")
         self.horizontalLayout_4.addWidget(self.label_4)
@@ -349,7 +333,7 @@ class Ui_MainWindow(object):
         self.pushButton_9 = QtWidgets.QPushButton(parent=self.frame_11)
         self.pushButton_9.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("icons/profile.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon1.addPixmap(QtGui.QPixmap(":/icons/profile.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.pushButton_9.setIcon(icon1)
         self.pushButton_9.setIconSize(QtCore.QSize(35, 35))
         self.pushButton_9.setObjectName("pushButton_9")
@@ -375,11 +359,11 @@ class Ui_MainWindow(object):
         self.main_scrollArea.setWidgetResizable(True)
         self.main_scrollArea.setObjectName("main_scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 598, 486))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 598, 382))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.gridLayout = QtWidgets.QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout.setObjectName("gridLayout")
-        spacerItem3 = QtWidgets.QSpacerItem(20, 425, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.gridLayout.addItem(spacerItem3, 0, 0, 1, 1)
         self.main_scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.gridLayout_5.addWidget(self.main_scrollArea, 0, 0, 1, 1)
@@ -391,7 +375,7 @@ class Ui_MainWindow(object):
         self.frame_10.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame_10.setObjectName("frame_10")
         self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.frame_10)
-        self.horizontalLayout_3.setContentsMargins(-1, -1, -1, 16)
+        self.horizontalLayout_3.setContentsMargins(-1, -1, -1, 7)
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         spacerItem4 = QtWidgets.QSpacerItem(30, 20, QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem4)
@@ -416,7 +400,7 @@ class Ui_MainWindow(object):
         self.send_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
         self.send_btn.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("icons/send-message (2).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon2.addPixmap(QtGui.QPixmap(":/icons/send-message (2).png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.send_btn.setIcon(icon2)
         self.send_btn.setIconSize(QtCore.QSize(18, 18))
         self.send_btn.setObjectName("send_btn")
@@ -439,7 +423,16 @@ class Ui_MainWindow(object):
         self.pushButton.setText(_translate("MainWindow", "New Conversation"))
         self.pushButton_2.setText(_translate("MainWindow", "Clear History"))
         self.pushButton_3.setText(_translate("MainWindow", "Setting"))
-        self.pushButton_4.setText(_translate("MainWindow", "Mode"))
         self.pushButton_5.setText(_translate("MainWindow", "Log Out"))
-        self.company_name.setText(_translate("MainWindow", "COMPANY NAME."))
+        self.company_name.setText(_translate("MainWindow", "Bangladesh Bank Ltd."))
         self.input_textEdit.setPlaceholderText(_translate("MainWindow", "Send a message"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec())

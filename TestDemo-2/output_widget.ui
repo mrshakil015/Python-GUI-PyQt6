@@ -156,6 +156,9 @@ border: none;
                 <pointsize>11</pointsize>
                </font>
               </property>
+              <property name="cursor">
+               <cursorShape>IBeamCursor</cursorShape>
+              </property>
               <property name="mouseTracking">
                <bool>false</bool>
               </property>

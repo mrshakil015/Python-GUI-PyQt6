@@ -102,7 +102,7 @@ class Ui_MainWindow(object):
 "}\n"
 "#send_btn{\n"
 "border: none;\n"
-"padding: 5px;\n"
+"padding: 10px;\n"
 "border-radius: 5px;\n"
 "}\n"
 "#send_btn:hover{\n"

@@ -35,6 +35,7 @@ class Ui_Form(object):
 "")
         self.frame_3.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
+        self.frame_3.setMinimumHeight(70)
         self.frame_3.setObjectName("frame_3")
         self.gridLayout_5 = QtWidgets.QGridLayout(self.frame_3)
         self.gridLayout_5.setObjectName("gridLayout_5")
@@ -69,6 +70,7 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setPointSize(11)
         self.label_2.setFont(font)
+        self.label_2.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.IBeamCursor))
         self.label_2.setMouseTracking(False)
         self.label_2.setStyleSheet("border:none;\n"
 "color: #fff;")
