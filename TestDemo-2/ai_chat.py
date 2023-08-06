@@ -73,7 +73,7 @@ vertexai.init(project="stoked-brand-391605", location="us-central1")
 chat_model = ChatModel.from_pretrained("chat-bison@001")
 parameters = {
     "temperature": 0.2,
-    "max_output_tokens": 256,
+    "max_output_tokens": 1024,
     "top_p": 0.8,
     "top_k": 40
 }

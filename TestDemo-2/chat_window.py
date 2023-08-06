@@ -1,6 +1,8 @@
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QSpacerItem, QSizePolicy, QApplication, QLabel
+from PyQt6.QtGui import QPixmap
 from input_widget import Ui_Form as Input_Form
 from output_widget import Ui_Form as Output_Form
+from markdown import markdown
 
 class InputWidget(QWidget):
     def __init__(self, parent=None, chat_obj=None):
@@ -64,7 +66,6 @@ class ChatWindow(QWidget):
             self.chats_data["chatlist"] += self.chat_data["chatlist"]
 
         self.show_chats()
-
     def show_chats(self):
             # chat_title = self.chats_data.get("title")
             chat_list = self.chats_data.get("chatlist")
@@ -76,51 +77,54 @@ class ChatWindow(QWidget):
 
                 out_str = chat.get("output_str")
                 out_widget = OutWidget()
-                out_widget.set_output_text(out_str)
+                # markdown_text = markdown(out_str, extensions=['markdown.extensions.extra', 'markdown.extensions.tables'])
+                
+                markdown_text = markdown(out_str, extensions=['markdown.extensions.extra', 'markdown.extensions.attr_list'])
+                
+                # Add the custom attributes for the table, th, and td elements
+                markdown_text = markdown_text.replace('<table>', '<table style="border: 1px solid white; padding: 10px; border-collapse: collapse;">')
+                markdown_text = markdown_text.replace('<th>', '<th style="border: 1px solid white; padding: 10px;">')
+                markdown_text = markdown_text.replace('<td>', '<td style="border: 1px solid white; padding: 10px;">')
+                out_widget.set_output_text(markdown_text)
                 self.main_verticalLayout.addWidget(out_widget)
+
+                # out_str = chat.get("output_str")
+                # out_widget = OutWidget()
+                # out_widget.set_output_text(out_str)
+                # self.main_verticalLayout.addWidget(out_widget)
 
             spacerItem = QSpacerItem(20, 300, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
             self.main_verticalLayout.addItem(spacerItem)
             self.setLayout(self.main_verticalLayout)
 
+    # def show_chats(self):
+    #     chat_list = self.chats_data.get("chatlist")
+    #     for chat in chat_list:
+    #         input_str = chat.get("input_str")
+    #         input_widget = InputWidget(chat_obj=self.chat_object)
+    #         input_widget.set_input_text(input_str)
+    #         self.main_verticalLayout.addWidget(input_widget)
 
-#     def show_chats(self):
-#         chatlist = self.chats_data.get("chatlist")
-#         for chat in chatlist:
-#             input_str = chat.get("input_str")
-#             input_widget = InputWidget(chat_obj=self.chat_object)
-#             input_widget.set_input_text(input_str)
-#             self.main_verticalLayout.addWidget(input_widget)
+    #         out_str = chat.get("output_str")
+    #         out_widget = OutWidget()
 
-#             output_str = chat.get("output_str")
-#             output_widget = OutputWidget()
-#             output_widget.set_output_text(output_str)
-#             # Set a fixed width for the output widgets (e.g., 600 pixels)
-#             output_widget.setFixedWidth(600)
+    #         # Check if the output is an image
+    #         if out_str.startswith("[Image "):
+    #             image_path = out_str[len("[Image "):-1]  # Extract the image path from the output string
+    #             image_widget = QLabel()
+    #             pixmap = QPixmap(image_path)
+    #             if not pixmap.isNull():
+    #                 image_widget.setPixmap(pixmap.scaledToWidth(400))  # Adjust the width as needed
+    #                 self.main_verticalLayout.addWidget(image_widget)
+    #         else:
+    #             # If it's not an image, treat it as regular text and convert any markdown in the output
+    #             markdown_text = markdown(out_str, extensions=['markdown.extensions.extra', 'markdown.extensions.tables'])
+    #             out_widget.set_output_text(markdown_text)
+    #             self.main_verticalLayout.addWidget(out_widget)
 
-#             self.main_verticalLayout.addWidget(output_widget)
+    #     spacerItem = QSpacerItem(20, 300, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
+    #     self.main_verticalLayout.addItem(spacerItem)
+    #     self.setLayout(self.main_verticalLayout)
 
-#         spacerItem = QSpacerItem(20, 300, QSizePolicy.Policy.Minimum, QSizePolicy.Policy.Expanding)
-#         self.main_verticalLayout.addItem(spacerItem)
-#         self.setLayout(self.main_verticalLayout)
+    
 
-#         # Adjust the size of the widget based on the display
-#         screen_rect = QApplication.primaryScreen().availableGeometry()
-#         self.resize(screen_rect.width() * 0.8, screen_rect.height() * 0.8)
-#         self.move(screen_rect.width() * 0.1, screen_rect.height() * 0.1)
-
-# class OutputWidget(QWidget):
-#     def __init__(self, parent=None):
-#         super().__init__(parent)
-
-#         self.output_ui = Output_Form()
-#         self.output_ui.setupUi(self)
-
-#         self.output_text_browser = QTextBrowser()
-#         self.output_text_browser.setOpenExternalLinks(True)  # To allow hyperlinks, if needed
-#         self.output_text_browser.setStyleSheet("QTextBrowser { border: none; background-color: transparent; }")
-
-#         self.output_ui.gridLayout.addWidget(self.output_text_browser, 0, 2, 1, 1)
-
-#     def set_output_text(self, output_str):
-#         self.output_text_browser.setPlainText(output_str)
