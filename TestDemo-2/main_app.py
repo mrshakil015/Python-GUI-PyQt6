@@ -81,9 +81,6 @@ class CustomWidget(QWidget):
         layout.addWidget(edit_btn)
         layout.addWidget(delete_btn)
 
-        
-
-
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
