@@ -117,6 +117,15 @@ border:none;
 #scrollAreaWidgetContents{
 background: #F0F8FF;
 }
+#file_btn{
+border: none;
+border-radius: 5px;
+background:#0A676C;
+padding: 5px;
+}
+#file_btn:hover{
+background: #507e7a;
+}
 
 
 
@@ -777,6 +786,32 @@ background: #F0F8FF;
                 </size>
                </property>
               </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="file_btn">
+               <property name="minimumSize">
+                <size>
+                 <width>0</width>
+                 <height>30</height>
+                </size>
+               </property>
+               <property name="cursor">
+                <cursorShape>PointingHandCursor</cursorShape>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset resource="Icons/rescources2.qrc">
+                 <normaloff>:/icons/paperclip.svg</normaloff>:/icons/paperclip.svg</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </widget>
              </item>
              <item>
               <widget class="QFrame" name="input_frame">

@@ -114,6 +114,14 @@ class Ui_MainWindow(object):
 "#right_main_widget,\n"
 "#scrollAreaWidgetContents{\n"
 "background: #F0F8FF;\n"
+"}\n""#file_btn{\n"
+"border: none;\n"
+"border-radius: 5px;\n"
+"background:#0A676C;\n"
+"padding: 5px;\n"
+"}\n"
+"#file_btn:hover{\n"
+"background: #507e7a;\n"
 "}\n"
 "\n"
 "\n"
@@ -395,6 +403,16 @@ class Ui_MainWindow(object):
         self.horizontalLayout_3.setObjectName("horizontalLayout_3")
         spacerItem4 = QtWidgets.QSpacerItem(30, 20, QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Minimum)
         self.horizontalLayout_3.addItem(spacerItem4)
+        self.file_btn = QtWidgets.QPushButton(parent=self.frame_10)
+        self.file_btn.setMinimumSize(QtCore.QSize(0, 30))
+        self.file_btn.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.PointingHandCursor))
+        self.file_btn.setText("")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("icons/paperclip.svg"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.file_btn.setIcon(icon2)
+        self.file_btn.setIconSize(QtCore.QSize(20, 20))
+        self.file_btn.setObjectName("file_btn")
+        self.horizontalLayout_3.addWidget(self.file_btn)
         self.input_frame = QtWidgets.QFrame(parent=self.frame_10)
         self.input_frame.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.input_frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)

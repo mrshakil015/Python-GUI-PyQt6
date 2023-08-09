@@ -1,7 +1,7 @@
 #---------------Open Ai--------------------
 
 # import openai
-# api_key = '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'
+# api_key = 'key'
 # openai.api_key = api_key
 
 # def get_response(input_str, system_message=""):

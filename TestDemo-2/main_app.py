@@ -11,6 +11,11 @@ from home_window import HomeWindow
 from chat_window import ChatWindow
 from login_window import LoginWindow
 from connect_db import ConnectDB
+from PyQt6.QtWidgets import QFileDialog
+from PyQt6.QtGui import QTextCursor
+
+import os
+import fitz
 
 import ai_chat
 
@@ -102,6 +107,10 @@ class MainWindow(QMainWindow):
         self.logout_btn = self.ui.pushButton_5
         self.profile_btn = self.ui.pushButton_9
         self.sidemenu = self.ui.sidemenu
+        self.file_attatch_btn = self.ui.file_btn
+        
+        self.pdf_document = fitz.open()
+        self.attached_pdf_path = None
 
         #Hide scrollbar of main scroll area
         self.main_scrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
@@ -123,9 +132,93 @@ class MainWindow(QMainWindow):
         self.clear_conversations_btn.clicked.connect(self.clear_conversations)
         self.logout_btn.clicked.connect(self.logout)
         self.profile_btn.clicked.connect(self.profile_section)
+        self.file_attatch_btn.clicked.connect(self.attach_file)
 
 
 #--------------Function for main window----------------
+    #Extract pdf file information
+    def attach_file(self):
+        file_path, _ = QFileDialog.getOpenFileName(
+            self, "Attach PDF File", "", "PDF Files (*.pdf);;All Files (*)"
+        )
+        if file_path:
+            # Store the attached file path
+            self.attached_pdf_path = file_path
+
+            # Display the attached file name in the input section
+            attached_file_text = f"Attached File: {os.path.basename(file_path)}"
+            self.message_input.setPlainText(attached_file_text + "\n")
+
+            # Automatically extract and display PDF information
+            extracted_text = self.extract_pdf_info(file_path)
+            
+            # Clear existing text and insert extracted text
+            self.message_input.setPlainText(extracted_text + "\n")
+    
+    def extract_pdf_info(self, pdf_path):
+        try:
+            doc = fitz.open(pdf_path)
+            pdf_info = ""
+
+            for page_num in range(doc.page_count):
+                page = doc.load_page(page_num)
+                pdf_info += page.get_text("text")
+
+            doc.close()
+
+            return pdf_info
+
+        except Exception as e:
+            error_message = f"Error extracting PDF information: {str(e)}"
+            print(error_message)  # Print the error for debugging
+            return error_message
+
+
+    def get_response(self):
+        message_input = self.message_input.toPlainText().strip()
+
+        chat_db = self.connect_db.get_chat_data()
+
+        if message_input:
+            response_list = ai_chat.get_response(message_input)
+            response_str = str(response_list)
+
+            attached_pdf_info = None
+
+            if self.attached_pdf_path:
+                attached_pdf_info = self.extract_pdf_info(self.attached_pdf_path)
+                response_str += f"\n[Attached PDF: {os.path.basename(self.attached_pdf_path)}]\n{attached_pdf_info}"
+                self.attached_pdf_path = None  # Clear the attached PDF path
+
+            if self.ui.chatlist.selectedIndexes():
+                current_index = self.ui.chatlist.currentIndex()
+                select_row = current_index.row()
+                chat_db[select_row]["chatlist"].append({
+                    "input_str": message_input,
+                    "output_str": response_str,
+                    "pdf_info": attached_pdf_info
+                })
+                chat_data = chat_db[select_row]
+                self.connect_db.save_chat_data(chat_db)
+                self.show_chat_window(chat_data)
+            else:
+                chat_data = {
+                    "title": message_input,
+                    "chatlist": [{
+                        "input_str": message_input,
+                        "output_str": response_str,
+                        "pdf_info": attached_pdf_info
+                    }]
+                }
+                chat_db.insert(0, chat_data)
+                self.connect_db.save_chat_data(chat_db)
+                self.show_chat_window(chat_data)
+                self.show_chatlist(selected_index=0)
+
+            self.message_input.clear()
+
+        else:
+            return
 
     #create profile section
     def profile_section(self):
@@ -142,51 +235,51 @@ class MainWindow(QMainWindow):
         self.connect_db.delete_all_data()
         self.show_chatlist()
 
-    def get_response(self):
-        message_input = self.message_input.toPlainText().strip()
+    # def get_response(self):
+    #     message_input = self.message_input.toPlainText().strip()
 
-        chat_db = self.connect_db.get_chat_data()
+    #     chat_db = self.connect_db.get_chat_data()
 
-        if message_input:
-            response_list = ai_chat.get_response(message_input)
-            response_str = str(response_list)
+    #     if message_input:
+    #         response_list = ai_chat.get_response(message_input)
+    #         response_str = str(response_list)
 
-            #Check if open a chat
-            if self.ui.chatlist.selectedIndexes():
-                #get current selected chat index
-                current_index = self.ui.chatlist.currentIndex()
-                select_row = current_index.row()
-                chat_db[select_row]["chatlist"] +=[{"input_str": message_input,
-                                                        "output_str": response_str}]
-                chat_data = chat_db[select_row]
+    #         #Check if open a chat
+    #         if self.ui.chatlist.selectedIndexes():
+    #             #get current selected chat index
+    #             current_index = self.ui.chatlist.currentIndex()
+    #             select_row = current_index.row()
+    #             chat_db[select_row]["chatlist"] +=[{"input_str": message_input,
+    #                                                     "output_str": response_str}]
+    #             chat_data = chat_db[select_row]
 
-                #save data into database
-                self.connect_db.save_chat_data(chat_db)
-                #Reload window
-                self.show_chat_window(chat_data)
-            else:
-                #create new chat and save it into database
-                chat_data = {
-                    "title": message_input,
-                    "chatlist": [
-                        {
-                            "input_str": message_input,
-                            "output_str": response_str
-                        }
-                    ]
+    #             #save data into database
+    #             self.connect_db.save_chat_data(chat_db)
+    #             #Reload window
+    #             self.show_chat_window(chat_data)
+    #         else:
+    #             #create new chat and save it into database
+    #             chat_data = {
+    #                 "title": message_input,
+    #                 "chatlist": [
+    #                     {
+    #                         "input_str": message_input,
+    #                         "output_str": response_str
+    #                     }
+    #                 ]
                     
-                }
-                chat_db.insert(0, chat_data)
-                self.connect_db.save_chat_data(chat_db)
+    #             }
+    #             chat_db.insert(0, chat_data)
+    #             self.connect_db.save_chat_data(chat_db)
 
-                #reload window
-                self.show_chat_window(chat_data)
-                self.show_chatlist(selected_index=0)
+    #             #reload window
+    #             self.show_chat_window(chat_data)
+    #             self.show_chatlist(selected_index=0)
 
-            #Clear input
-            self.message_input.clear()
-        else:
-            return
+    #         #Clear input
+    #         self.message_input.clear()
+    #     else:
+    #         return
 
 
     #logout application
@@ -378,13 +471,6 @@ class MainWindow(QMainWindow):
         chat_title.setText(pre_chat_title)
         self.on_chatlist_clicked()
 
-    # Show a default window if there is no chat is selected
-    # def show_home_window(self):
-    #     grid_layout = self.clear_main_scroll_area()
-    #     # show new message
-    #     home_window = HomeWindow()
-    #     grid_layout.addWidget(home_window) 
-    
     ## Functions for chat list ///////////////////////////////
     # Delete a chat form chat list
     def delete_chat_data(self):
