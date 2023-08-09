@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icons">
+    <file>paperclip.svg</file>
     <file>main-logo.png</file>
     <file>send-message (2).png</file>
     <file>send (1).svg</file>
