@@ -137,8 +137,6 @@ class MainWindow(QMainWindow):
 
 #--------------Function for main window----------------
     #Extract pdf file information
-
-
     def attach_file(self):
         file_path, _ = QFileDialog.getOpenFileName(
             self, "Attach PDF File", "", "PDF Files (*.pdf);;All Files (*)"
@@ -153,17 +151,10 @@ class MainWindow(QMainWindow):
 
             # Automatically extract and display PDF information
             extracted_text = self.extract_pdf_info(file_path)
-
-            # Append the extracted PDF information to pdf_info
-            current_text = self.message_input.toPlainText()
-            updated_text = current_text + extracted_text
-            self.message_input.setPlainText(updated_text)
-
-            # Clear the attached PDF path
-            self.attached_pdf_path = None
-
-
-
+            
+            # Clear existing text and insert extracted text
+            self.message_input.setPlainText(extracted_text + "\n")
+    
     def extract_pdf_info(self, pdf_path):
         try:
             doc = fitz.open(pdf_path)

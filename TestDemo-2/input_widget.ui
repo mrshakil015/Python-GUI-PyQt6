@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>898</width>
-    <height>199</height>
+    <height>84</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -48,6 +48,21 @@ padding-bottom: 5px;
       <enum>QFrame::Raised</enum>
      </property>
      <layout class="QGridLayout" name="gridLayout_5">
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <property name="spacing">
+       <number>0</number>
+      </property>
       <item row="0" column="1">
        <widget class="QFrame" name="frame_4">
         <property name="styleSheet">
@@ -174,7 +189,7 @@ border: none;
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>80</width>
+          <width>95</width>
           <height>20</height>
          </size>
         </property>
@@ -187,7 +202,7 @@ border: none;
         </property>
         <property name="sizeHint" stdset="0">
          <size>
-          <width>80</width>
+          <width>95</width>
           <height>20</height>
          </size>
         </property>
@@ -197,6 +212,9 @@ border: none;
        <spacer name="verticalSpacer_2">
         <property name="orientation">
          <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Preferred</enum>
         </property>
         <property name="sizeHint" stdset="0">
          <size>

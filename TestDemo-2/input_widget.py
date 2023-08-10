@@ -28,6 +28,8 @@ class Ui_Form(object):
         self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame.setObjectName("frame")
         self.gridLayout_5 = QtWidgets.QGridLayout(self.frame)
+        self.gridLayout_5.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout_5.setSpacing(0)
         self.gridLayout_5.setObjectName("gridLayout_5")
         self.frame_4 = QtWidgets.QFrame(parent=self.frame)
         self.frame_4.setStyleSheet("background: #fff;\n"
@@ -81,11 +83,11 @@ class Ui_Form(object):
         self.gridLayout.addWidget(self.label_2, 0, 0, 1, 1)
         self.gridLayout_2.addWidget(self.frame_3, 0, 1, 1, 1)
         self.gridLayout_5.addWidget(self.frame_4, 0, 1, 1, 1)
-        spacerItem1 = QtWidgets.QSpacerItem(80, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem1 = QtWidgets.QSpacerItem(95, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.gridLayout_5.addItem(spacerItem1, 0, 2, 1, 1)
-        spacerItem2 = QtWidgets.QSpacerItem(80, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        spacerItem2 = QtWidgets.QSpacerItem(95, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.gridLayout_5.addItem(spacerItem2, 0, 0, 1, 1)
-        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Preferred)
         self.gridLayout_5.addItem(spacerItem3, 1, 1, 1, 1)
         self.gridLayout_4.addWidget(self.frame, 0, 0, 1, 1)
 

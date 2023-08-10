@@ -62,7 +62,6 @@
 import os
 from pprint import pprint
 
-
 # this is a key file for a service account, which only has the role "Vertex AI User"
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'my_credentials.json'
 

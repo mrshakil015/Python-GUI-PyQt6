@@ -1,0 +1,5 @@
+pip install google-cloud-aiplatform --upgrade
+pip install langchain --upgrade
+pip install bs4 docarray tiktoken streamlit
+pip install faiss-cpu
+pip install pypdf
