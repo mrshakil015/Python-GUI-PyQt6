@@ -6,7 +6,7 @@
 # pages = loader.load_and_split()
 
 # # Set your OpenAI API key here
-# openai_api_key = "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"
+# openai_api_key = "k-LNh43Eg1dYYujQtrBa78T3BlbkFJ1iU7jytfJdPD4rz2eBY"
 
 # faiss_index = FAISS.from_documents(pages, OpenAIEmbeddings(openai_api_key=openai_api_key))
 # docs = faiss_index.similarity_search("How will the community be engaged?", k=2)
