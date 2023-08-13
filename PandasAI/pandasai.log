@@ -1,0 +1,4 @@
+2023-08-13 22:18:48 [INFO] Question: What is the total in Total line
+2023-08-13 22:18:48 [INFO] Running PandasAI with openai LLM...
+2023-08-13 22:18:48 [INFO] Prompt ID: fb8d888e-98f5-4510-b80a-cc4735a795c3
+2023-08-13 22:18:48 [INFO] error_code=invalid_api_key error_message='Incorrect API key provided: sk-mtujz***************************************V7t9. You can find your API key at https://platform.openai.com/account/api-keys.' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False

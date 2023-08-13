@@ -5,7 +5,7 @@ from pandasai.llm.openai import OpenAI
 df = pd.read_csv("supermarket_sales.csv")
 df = df[['Gender', 'Product line', 'Total']]
 
-OPENAI_API_KEY = "k-mtujzCGAyXF5x2gLcLBDT3BlbkFJVLdrDwDxsKnpEkhzV7t"
+OPENAI_API_KEY = "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"
 llm = OpenAI(api_token= OPENAI_API_KEY)
 
 pandas_ai = PandasAI(llm)
