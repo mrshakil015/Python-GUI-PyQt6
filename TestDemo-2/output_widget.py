@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'c:\Users\MD. SHAMIM\Documents\GitHub\Python-GUI-PyQt6\TestDemo-2\output_widget.ui'
+# Form implementation generated from reading ui file 'output_widget.ui'
 #
 # Created by: PyQt6 UI code generator 6.5.2
 #
@@ -12,7 +12,7 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName("Form")
-        Form.resize(788, 108)
+        Form.resize(788, 93)
         Form.setMinimumSize(QtCore.QSize(0, 0))
         Form.setMaximumSize(QtCore.QSize(16777215, 16777215))
         Form.setStyleSheet("")
@@ -27,6 +27,8 @@ class Ui_Form(object):
         self.frame.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
         self.frame.setObjectName("frame")
         self.gridLayout_3 = QtWidgets.QGridLayout(self.frame)
+        self.gridLayout_3.setContentsMargins(0, 6, 0, 0)
+        self.gridLayout_3.setSpacing(0)
         self.gridLayout_3.setObjectName("gridLayout_3")
         spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.gridLayout_3.addItem(spacerItem, 0, 0, 1, 1)
@@ -51,11 +53,11 @@ class Ui_Form(object):
         self.label.setMinimumSize(QtCore.QSize(40, 25))
         self.label.setMaximumSize(QtCore.QSize(30, 20))
         self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("icons/main-logo.png"))
+        self.label.setPixmap(QtGui.QPixmap(":/icons/main-logo.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.gridLayout_4.addWidget(self.label, 0, 0, 1, 1, QtCore.Qt.AlignmentFlag.AlignTop)
-        spacerItem1 = QtWidgets.QSpacerItem(20, 77, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Preferred)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 0, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
         self.gridLayout_4.addItem(spacerItem1, 1, 0, 1, 1)
         self.gridLayout_5.addWidget(self.frame_2, 0, 0, 1, 1)
         self.frame_4 = QtWidgets.QFrame(parent=self.frame_3)
@@ -64,28 +66,28 @@ class Ui_Form(object):
         self.frame_4.setObjectName("frame_4")
         self.gridLayout = QtWidgets.QGridLayout(self.frame_4)
         self.gridLayout.setObjectName("gridLayout")
-        self.label_2 = QtWidgets.QLabel(parent=self.frame_4)
-        self.label_2.setMinimumSize(QtCore.QSize(600, 0))
-        self.label_2.setMaximumSize(QtCore.QSize(16777215, 16777215))
+        self.output_lable = QtWidgets.QLabel(parent=self.frame_4)
+        self.output_lable.setMinimumSize(QtCore.QSize(600, 0))
+        self.output_lable.setMaximumSize(QtCore.QSize(16777215, 16777215))
         font = QtGui.QFont()
         font.setPointSize(11)
-        self.label_2.setFont(font)
-        self.label_2.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.IBeamCursor))
-        self.label_2.setMouseTracking(False)
-        self.label_2.setStyleSheet("border:none;\n"
+        self.output_lable.setFont(font)
+        self.output_lable.setCursor(QtGui.QCursor(QtCore.Qt.CursorShape.IBeamCursor))
+        self.output_lable.setMouseTracking(False)
+        self.output_lable.setStyleSheet("border:none;\n"
 "color: #fff;")
-        self.label_2.setInputMethodHints(QtCore.Qt.InputMethodHint.ImhMultiLine)
-        self.label_2.setText("")
-        self.label_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)
-        self.label_2.setWordWrap(True)
-        self.label_2.setTextInteractionFlags(QtCore.Qt.TextInteractionFlag.LinksAccessibleByKeyboard|QtCore.Qt.TextInteractionFlag.LinksAccessibleByMouse|QtCore.Qt.TextInteractionFlag.TextBrowserInteraction|QtCore.Qt.TextInteractionFlag.TextSelectableByKeyboard|QtCore.Qt.TextInteractionFlag.TextSelectableByMouse)
-        self.label_2.setObjectName("label_2")
-        self.gridLayout.addWidget(self.label_2, 0, 0, 1, 1)
+        self.output_lable.setInputMethodHints(QtCore.Qt.InputMethodHint.ImhMultiLine)
+        self.output_lable.setText("")
+        self.output_lable.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)
+        self.output_lable.setWordWrap(True)
+        self.output_lable.setTextInteractionFlags(QtCore.Qt.TextInteractionFlag.LinksAccessibleByKeyboard|QtCore.Qt.TextInteractionFlag.LinksAccessibleByMouse|QtCore.Qt.TextInteractionFlag.TextBrowserInteraction|QtCore.Qt.TextInteractionFlag.TextSelectableByKeyboard|QtCore.Qt.TextInteractionFlag.TextSelectableByMouse)
+        self.output_lable.setObjectName("output_lable")
+        self.gridLayout.addWidget(self.output_lable, 0, 0, 1, 1)
         self.gridLayout_5.addWidget(self.frame_4, 0, 1, 1, 1)
         self.gridLayout_3.addWidget(self.frame_3, 0, 1, 1, 1)
         spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
         self.gridLayout_3.addItem(spacerItem2, 0, 2, 1, 1)
-        spacerItem3 = QtWidgets.QSpacerItem(20, 40, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Expanding)
+        spacerItem3 = QtWidgets.QSpacerItem(20, 10, QtWidgets.QSizePolicy.Policy.Minimum, QtWidgets.QSizePolicy.Policy.Preferred)
         self.gridLayout_3.addItem(spacerItem3, 1, 1, 1, 1)
         self.gridLayout_2.addWidget(self.frame, 0, 0, 1, 1)
 
@@ -95,3 +97,13 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    Form = QtWidgets.QWidget()
+    ui = Ui_Form()
+    ui.setupUi(Form)
+    Form.show()
+    sys.exit(app.exec())

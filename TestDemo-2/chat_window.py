@@ -11,7 +11,7 @@ class InputWidget(QWidget):
         self.input_ui.setupUi(self)
 
         self.chat_obj = chat_obj
-        self.input_label = self.input_ui.label_2
+        self.input_label = self.input_ui.input_label
 
     def set_input_text(self, input_str):
         self.input_label.setText(input_str)
@@ -22,7 +22,7 @@ class OutWidget(QWidget):
         self.output_ui = Output_Form()
         self.output_ui.setupUi(self)
 
-        self.output_label = self.output_ui.label_2
+        self.output_label = self.output_ui.output_lable
 
         # Set QSizePolicy to Expanding for the label_2 widget
         self.output_label.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Minimum)
